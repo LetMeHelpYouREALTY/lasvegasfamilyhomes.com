@@ -20,7 +20,34 @@ export interface DomainConfig {
 
 const REALSCOUT_AGENT_ID = "QWdlbnQtMjI1MDUw";
 
+const FAMILY_HOMES_CONFIG: DomainConfig = {
+  domain: "lasvegasfamilyhomes.com",
+  neighborhood: "Las Vegas Family Homes",
+  tagline: "Las Vegas Family Homes for Sale",
+  description:
+    "Search Las Vegas family homes for sale — 3–5 bedroom houses with yards in Summerlin, Henderson, Centennial Hills, Skye Canyon, Inspirada, and Mountain's Edge. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
+  heroHeadline: "Las Vegas Family Homes for Sale",
+  heroSubheadline:
+    "3–5 bedroom houses, private yards, and master-planned amenities across the Las Vegas Valley.",
+  keywords: [
+    "Las Vegas family homes",
+    "Las Vegas homes for sale",
+    "3 bedroom homes Las Vegas",
+    "4 bedroom homes Henderson",
+    "homes with yards Las Vegas",
+    "Summerlin homes",
+    "Dr Jan Duffy",
+  ],
+  pageType: "search",
+  realscoutAgentId: REALSCOUT_AGENT_ID,
+  ctaBadge: "Family Home Expert",
+  ctaHeadline: "Find Your Family Home",
+  ctaSubheadline:
+    "Tell me the bedrooms, yard, and commute you need. I will match listings in Summerlin, Henderson, and the northwest valley.",
+};
+
 export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
+  "lasvegasfamilyhomes.com": FAMILY_HOMES_CONFIG,
   "consenzaestates.com": { domain: "consenzaestates.com", neighborhood: "Consenza Estates", tagline: "Luxury Living in Consenza Estates", description: "Find your dream home in Consenza Estates, Las Vegas. Expert guidance from Dr. Jan Duffy.", heroHeadline: "Consenza Estates Homes for Sale", heroSubheadline: "Exclusive properties in one of Las Vegas' most sought-after communities.", keywords: ["Consenza Estates homes", "Las Vegas luxury real estate", "Consenza Estates Las Vegas"], pageType: "luxury", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Consenza Estates Expert", ctaHeadline: "Find Your Consenza Estates Home", ctaSubheadline: "I know every listing in this community. Let me match you with the right home." },
   "aliantehomesforsale.com": { domain: "aliantehomesforsale.com", neighborhood: "Aliante", tagline: "Aliante Homes for Sale", description: "Search Aliante homes for sale in North Las Vegas. Expert real estate guidance from Dr. Jan Duffy.", heroHeadline: "Aliante Homes for Sale", heroSubheadline: "Master-planned living in the heart of North Las Vegas.", keywords: ["Aliante homes for sale", "Aliante North Las Vegas", "Aliante real estate"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Aliante Specialist", ctaHeadline: "Search Aliante Homes Today", ctaSubheadline: "Get instant access to all Aliante listings with expert guidance." },
   "californiaforeverbroker.com": { domain: "californiaforeverbroker.com", neighborhood: "Las Vegas", tagline: "Relocating from California to Las Vegas", description: "California to Las Vegas relocation specialist. Find your Nevada dream home with Dr. Jan Duffy.", heroHeadline: "Leaving California for Las Vegas?", heroSubheadline: "No state income tax, lower cost of living, and year-round sunshine. Let me help you make the move.", keywords: ["California to Las Vegas move", "relocation Las Vegas", "Nevada real estate for Californians"], pageType: "lifestyle", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Relocation Expert", ctaHeadline: "Your Nevada Fresh Start Awaits", ctaSubheadline: "I've helped hundreds of California families make the move. Let's talk." },
@@ -54,23 +81,13 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
   "yourdivorcerealtor.com": { domain: "yourdivorcerealtor.com", neighborhood: "Las Vegas", tagline: "Divorce Real Estate Specialist Las Vegas", description: "Confidential Las Vegas divorce real estate specialist. Dr. Jan Duffy handles court-ordered sales with discretion.", heroHeadline: "Your Divorce Real Estate Specialist", heroSubheadline: "Confidential, compassionate real estate guidance during life's most challenging transitions.", keywords: ["divorce realtor Las Vegas", "divorce real estate Las Vegas", "court ordered sale Las Vegas"], pageType: "lifestyle", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Confidential Support", ctaHeadline: "Private Consultation Available", ctaSubheadline: "I handle divorce sales with complete discretion. Let's discuss your options privately." },
 };
 
-// Default config for any domain not specifically listed
+// Default config for this dedicated site (and any unmatched host)
 export const DEFAULT_CONFIG: DomainConfig = {
-  domain: "default",
-  neighborhood: "Las Vegas",
-  tagline: "Las Vegas Homes for Sale",
-  description: "Search Las Vegas homes for sale. Expert real estate guidance from Dr. Jan Duffy, BHHS Nevada Properties.",
-  heroHeadline: "Las Vegas Homes for Sale",
-  heroSubheadline: "Expert real estate guidance from Dr. Jan Duffy — 30+ years, 500+ families helped.",
-  keywords: ["Las Vegas homes for sale", "Las Vegas real estate", "Dr Jan Duffy"],
-  pageType: "search",
-  realscoutAgentId: REALSCOUT_AGENT_ID,
-  ctaBadge: "Las Vegas Expert",
-  ctaHeadline: "Find Your Las Vegas Home",
-  ctaSubheadline: "Call or text Dr. Jan at 702-222-1964 — I answer my own phone.",
+  ...FAMILY_HOMES_CONFIG,
+  domain: "lasvegasfamilyhomes.com",
 };
 
 export function getDomainConfig(hostname: string): DomainConfig {
-  const clean = hostname.replace(/^www\./, "").toLowerCase();
+  const clean = hostname.replace(/^www\./, "").toLowerCase().split(":")[0];
   return DOMAIN_CONFIGS[clean] ?? DEFAULT_CONFIG;
 }

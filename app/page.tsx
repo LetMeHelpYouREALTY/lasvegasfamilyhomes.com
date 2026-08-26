@@ -15,7 +15,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
-    url: `https://${config.domain !== "default" ? config.domain : "heyberkshire.com"}`,
+    url: `https://${config.domain !== "default" ? config.domain : "lasvegasfamilyhomes.com"}`,
     telephone: "+17022221964",
     address: {
       "@type": "PostalAddress",
