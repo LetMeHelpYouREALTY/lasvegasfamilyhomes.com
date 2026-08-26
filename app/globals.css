@@ -53,6 +53,19 @@ realscout-office-listings {
   width: 100%;
 }
 
+/* RealScout Advanced Search (home-search filter bar) */
+realscout-advanced-search {
+  --rs-as-button-color: #2563eb;
+  --rs-as-button-text-color: #ffffff;
+  --rs-as-background-color: #ffffff;
+  width: 100%;
+  display: block;
+}
+
+.home-search-listings realscout-office-listings {
+  width: 100%;
+}
+
 /* RealScout container wrapper */
 .realscout-wrapper {
   display: flex;

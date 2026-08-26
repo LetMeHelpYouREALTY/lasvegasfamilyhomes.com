@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { generateAllHomeSearchUrls } from "@/lib/home-search";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://lasvegasfamilyhomes.com";
@@ -19,6 +20,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/listings`,
+      priority: 0.9,
+      changeFrequency: "daily" as const,
+    },
+    {
+      url: `${baseUrl}/home-search`,
+      priority: 0.9,
+      changeFrequency: "daily" as const,
+    },
+    {
+      url: `${baseUrl}/home-search/listings`,
       priority: 0.9,
       changeFrequency: "daily" as const,
     },
@@ -224,6 +235,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const homeSearchPages = generateAllHomeSearchUrls()
+    .filter(
+      (path) => path !== "/home-search" && path !== "/home-search/listings",
+    )
+    .map((path) => ({
+      url: `${baseUrl}${path}`,
+      priority: 0.8,
+      changeFrequency: "daily" as const,
+    }));
+
   const allPages = [
     ...corePages,
     ...servicePages,
@@ -231,6 +252,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...sellerPersonaPages,
     ...fiftyPlusCommunityPages,
     ...neighborhoodPages,
+    ...homeSearchPages,
   ];
 
   return allPages.map((page) => ({
