@@ -19,7 +19,11 @@ export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata(config, { path: "/" });
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={GeistSans.className}>
       <head>

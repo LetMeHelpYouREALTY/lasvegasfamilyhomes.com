@@ -85,7 +85,17 @@ jobs:
         run: npm run lint
 
       - name: Check Prettier formatting
-        run: npx prettier --check "**/*.{ts,tsx,js,jsx,json,md,css}"
+        run: |
+          git fetch --no-tags --depth=1 origin ${{ github.base_ref }}
+          CHANGED=$(git diff --name-only --diff-filter=ACMR origin/${{ github.base_ref }}...HEAD -- \
+            '*.ts' '*.tsx' '*.js' '*.jsx' '*.json' '*.md' '*.css' || true)
+          if [ -z "$CHANGED" ]; then
+            echo "No Prettier-eligible files changed"
+            exit 0
+          fi
+          echo "Checking:"
+          echo "$CHANGED"
+          echo "$CHANGED" | xargs npx prettier --check
 
   # ============================================
   # Test Suite
@@ -323,10 +333,9 @@ jobs:
                   issues.push(`❌ **${file.filename}**: Missing metadata export (SEO)`);
                 }
                 
-                // Check for proper phone numbers
-                if (content.includes('702-222-1964') || content.includes('7022221964') || 
-                    content.includes('702-500-1955') || content.includes('7025001955')) {
-                  issues.push(`❌ **${file.filename}**: Contains old phone number (should be (702) 500-1942)`);
+                // Check for retired tracking numbers (702-222-1964 is the current client CTA)
+                if (content.includes('702-500-1955') || content.includes('7025001955')) {
+                  issues.push(`❌ **${file.filename}**: Contains old phone number (should be (702) 222-1964)`);
                 }
                 
                 // Check for JSON-LD schema

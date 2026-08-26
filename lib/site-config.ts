@@ -4,7 +4,8 @@
 export const siteConfig = {
   name: "Las Vegas Family Homes",
   fullName: "Las Vegas Family Homes | Dr. Jan Duffy, REALTOR®",
-  tagline: "3–5 bedroom homes, yards, and master-planned living across the Las Vegas Valley",
+  tagline:
+    "3–5 bedroom homes, yards, and master-planned living across the Las Vegas Valley",
   brandLine:
     "Las Vegas Family Homes | Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties",
   brandName: "Las Vegas Family Homes",
@@ -112,21 +113,34 @@ export const neighborhoods = [
   {
     name: "Summerlin",
     slug: "summerlin",
-    description: "Master-planned community with 150+ parks, trails, and Downtown Summerlin",
+    description:
+      "Master-planned community with 150+ parks, trails, and Downtown Summerlin",
     medianPrice: "$537,500",
-    highlights: ["Red Rock views", "150+ parks", "Downtown Summerlin", "Golf courses"],
+    highlights: [
+      "Red Rock views",
+      "150+ parks",
+      "Downtown Summerlin",
+      "Golf courses",
+    ],
   },
   {
     name: "Henderson",
     slug: "henderson",
-    description: "Nevada's second-largest city with master-planned villages and I-215 access",
+    description:
+      "Nevada's second-largest city with master-planned villages and I-215 access",
     medianPrice: "$545,000",
-    highlights: ["Green Valley", "Inspirada", "Lake Las Vegas", "Parks and trails"],
+    highlights: [
+      "Green Valley",
+      "Inspirada",
+      "Lake Las Vegas",
+      "Parks and trails",
+    ],
   },
   {
     name: "Green Valley",
     slug: "green-valley",
-    description: "Henderson community with mature landscaping, The District, and golf",
+    description:
+      "Henderson community with mature landscaping, The District, and golf",
     medianPrice: "$520,000+",
     highlights: ["Golf courses", "Walking trails", "The District", "Parks"],
   },
@@ -135,49 +149,70 @@ export const neighborhoods = [
     slug: "the-ridges",
     description: "Guard-gated Summerlin community with custom estates",
     medianPrice: "$2.5M",
-    highlights: ["Custom estates", "Bear's Best Golf", "Strip views", "Guard-gated"],
+    highlights: [
+      "Custom estates",
+      "Bear's Best Golf",
+      "Strip views",
+      "Guard-gated",
+    ],
   },
   {
     name: "Southern Highlands",
     slug: "southern-highlands",
-    description: "Master-planned community with championship golf and mountain views",
+    description:
+      "Master-planned community with championship golf and mountain views",
     medianPrice: "$750,000",
-    highlights: ["Golf community", "Guard-gated", "Mountain views", "Club amenities"],
+    highlights: [
+      "Golf community",
+      "Guard-gated",
+      "Mountain views",
+      "Club amenities",
+    ],
   },
   {
     name: "North Las Vegas",
     slug: "north-las-vegas",
-    description: "Growing area with new construction and 3–4 bedroom floor plans",
+    description:
+      "Growing area with new construction and 3–4 bedroom floor plans",
     medianPrice: "$365,000+",
     highlights: ["New construction", "Aliante", "I-15 access", "Parks"],
   },
   {
     name: "Skye Canyon",
     slug: "skye-canyon",
-    description: "Northwest master-planned community with Skye Center and mountain views",
+    description:
+      "Northwest master-planned community with Skye Center and mountain views",
     medianPrice: "$565,000",
     highlights: ["New homes", "Mountain views", "Skye Center", "Parks"],
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
-    description: "Northwest Las Vegas community near Floyd Lamb Park and mountain trails",
+    description:
+      "Northwest Las Vegas community near Floyd Lamb Park and mountain trails",
     medianPrice: "$465,000+",
     highlights: ["Mountain access", "Parks", "Shopping", "3–5 bedroom homes"],
   },
   {
     name: "Inspirada",
     slug: "inspirada",
-    description: "Henderson master-planned community with resort pools and walking trails",
+    description:
+      "Henderson master-planned community with resort pools and walking trails",
     medianPrice: "$625,000",
     highlights: ["Resort pools", "Walking trails", "New construction", "Parks"],
   },
   {
     name: "Mountain's Edge",
     slug: "mountains-edge",
-    description: "Southwest Las Vegas master-planned community with mountain views",
+    description:
+      "Southwest Las Vegas master-planned community with mountain views",
     medianPrice: "$535,000",
-    highlights: ["Mountain views", "Parks", "Exploration Peak", "3–5 bedroom homes"],
+    highlights: [
+      "Mountain views",
+      "Parks",
+      "Exploration Peak",
+      "3–5 bedroom homes",
+    ],
   },
 ];
 
@@ -185,25 +220,29 @@ export const services = [
   {
     name: "Home Buying",
     slug: "buyers",
-    description: "Expert guidance through every step of the home buying process",
+    description:
+      "Expert guidance through every step of the home buying process",
     icon: "Home",
   },
   {
     name: "3–4 Bedroom Homes",
     slug: "3-4-bedroom-homes",
-    description: "Single-family homes with the bedrooms and living space you need",
+    description:
+      "Single-family homes with the bedrooms and living space you need",
     icon: "Home",
   },
   {
     name: "Homes with Yards",
     slug: "homes-with-yards",
-    description: "Single-family lots with private outdoor space across the valley",
+    description:
+      "Single-family lots with private outdoor space across the valley",
     icon: "TreePine",
   },
   {
     name: "Home Selling",
     slug: "sellers",
-    description: "Maximize your home's value with professional marketing and negotiation",
+    description:
+      "Maximize your home's value with professional marketing and negotiation",
     icon: "TrendingUp",
   },
   {
@@ -261,7 +300,8 @@ export const commonFAQs = {
         "Summerlin, Henderson (Green Valley and Inspirada), Centennial Hills, Skye Canyon, Mountain's Edge, Southern Highlands, and North Las Vegas all have large inventories of 3–5 bedroom single-family homes. Dr. Jan maps floor plans, lot size, and commute times to your list.",
     },
     {
-      question: "Why work with Dr. Jan Duffy at Berkshire Hathaway HomeServices?",
+      question:
+        "Why work with Dr. Jan Duffy at Berkshire Hathaway HomeServices?",
       answer:
         "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc. Dr. Jan has served Las Vegas since 2008, with $127M+ in closed transactions. Call or text (702) 222-1964 — she answers her own phone.",
     },

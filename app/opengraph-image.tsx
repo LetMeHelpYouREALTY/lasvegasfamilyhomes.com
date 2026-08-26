@@ -17,7 +17,8 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1d4ed8 100%)",
+          background:
+            "linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1d4ed8 100%)",
           color: "#ffffff",
           padding: "64px 72px",
           fontFamily: "sans-serif",
@@ -69,7 +70,8 @@ export default function OpenGraphImage() {
               lineHeight: 1.35,
             }}
           >
-            3–5 bedroom houses with yards in Summerlin, Henderson, Centennial Hills, and Skye Canyon
+            3–5 bedroom houses with yards in Summerlin, Henderson, Centennial
+            Hills, and Skye Canyon
           </div>
         </div>
 
@@ -83,15 +85,24 @@ export default function OpenGraphImage() {
         >
           <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             <span style={{ fontWeight: 700 }}>{agentInfo.name}, REALTOR®</span>
-            <span style={{ color: "#bfdbfe" }}>License {agentInfo.license}</span>
+            <span style={{ color: "#bfdbfe" }}>
+              License {agentInfo.license}
+            </span>
           </div>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 6 }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-end",
+              gap: 6,
+            }}
+          >
             <span style={{ fontWeight: 700 }}>{agentInfo.phoneFormatted}</span>
             <span style={{ color: "#bfdbfe" }}>lasvegasfamilyhomes.com</span>
           </div>
         </div>
       </div>
     ),
-    { ...size }
+    { ...size },
   );
 }

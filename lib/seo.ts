@@ -27,7 +27,7 @@ export function getOgImage(canonicalUrl: string) {
 
 export function buildMetadata(
   config: DomainConfig,
-  options?: { path?: string }
+  options?: { path?: string },
 ): Metadata {
   const canonicalUrl = getCanonicalUrl(config.domain);
   const path = options?.path ?? "/";
