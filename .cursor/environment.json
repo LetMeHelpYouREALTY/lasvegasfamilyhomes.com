@@ -1,0 +1,11 @@
+{
+  "name": "Las Vegas Family Homes (Next.js 14)",
+  "install": "pnpm install && pnpm rebuild sharp",
+  "terminals": [
+    {
+      "name": "next-dev",
+      "command": "pnpm run next-dev"
+    }
+  ],
+  "ports": [3000]
+}
