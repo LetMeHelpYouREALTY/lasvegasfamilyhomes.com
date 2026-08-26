@@ -3,20 +3,41 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { headers } from "next/headers";
 import { getDomainConfig } from "@/lib/domain-config";
+import { siteConfig } from "@/lib/site-config";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const domain = headers().get("x-domain") || "";
+  const requestHeaders = headers();
+  const domain = requestHeaders.get("x-domain") || requestHeaders.get("host") || "";
   const config = getDomainConfig(domain);
+
+  const isLocal = domain.startsWith("localhost") || domain.startsWith("127.0.0.1");
+  const baseUrl = domain
+    ? `${isLocal ? "http" : "https"}://${domain.replace(/^www\./, "")}`
+    : siteConfig.url;
+  const siteName = `${config.neighborhood} Real Estate | Dr. Jan Duffy, ${siteConfig.fullName}`;
+
   return {
+    metadataBase: new URL(baseUrl),
     title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
     description: config.description,
     keywords: config.keywords,
+    alternates: {
+      canonical: "/",
+    },
     openGraph: {
       title: config.heroHeadline,
       description: config.description,
       type: "website",
+      url: baseUrl,
+      siteName,
+      locale: "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: config.heroHeadline,
+      description: config.description,
     },
   };
 }
