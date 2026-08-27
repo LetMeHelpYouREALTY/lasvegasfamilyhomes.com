@@ -16,7 +16,8 @@
   }
 
   body {
-    @apply bg-white text-luxury-ink antialiased;
+    @apply bg-white antialiased;
+    color: #1a1a1a;
     font-family: var(--font-montserrat), sans-serif;
     font-size: 16px;
   }
@@ -62,7 +63,8 @@
 
   a:focus-visible,
   button:focus-visible {
-    @apply outline-none ring-2 ring-luxury-gold ring-offset-2;
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #d6b056;
   }
 
   ::selection {
