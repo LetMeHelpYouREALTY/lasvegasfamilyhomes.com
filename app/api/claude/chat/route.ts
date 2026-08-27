@@ -1,6 +1,6 @@
 /**
  * Claude API Route - Optimized Chat Endpoint
- * 
+ *
  * Features:
  * - Prompt caching (90% cost savings)
  * - Response caching (reduce duplicate queries)
@@ -10,25 +10,31 @@
  * - Error handling
  */
 
-import { NextRequest, NextResponse } from 'next/server';
-import { ClaudeClient } from '@/lib/claude/client';
-import { defaultCache } from '@/lib/claude/cache';
+import { NextRequest, NextResponse } from "next/server";
+import { denyIfBot } from "@/lib/botid";
+import { ClaudeClient } from "@/lib/claude/client";
+import { defaultCache } from "@/lib/claude/cache";
 import {
   realEstateAgentTemplate,
   propertySearchTemplate,
   homeValuationTemplate,
   customerSupportTemplate,
   createCachedPrompt,
-} from '@/lib/claude/prompt-templates';
+} from "@/lib/claude/prompt-templates";
 
 // Initialize Claude client
 const claude = new ClaudeClient({
-  apiKey: process.env.ANTHROPIC_API_KEY || '',
+  apiKey: process.env.ANTHROPIC_API_KEY || "",
   enableCaching: true,
   enableCostTracking: true,
 });
 
 export async function POST(request: NextRequest) {
+  const botResponse = await denyIfBot();
+  if (botResponse) {
+    return botResponse;
+  }
+
   try {
     const body = await request.json();
     const { messages, templateType, stream = false } = body;
@@ -36,15 +42,15 @@ export async function POST(request: NextRequest) {
     // Validate request
     if (!messages || !Array.isArray(messages)) {
       return NextResponse.json(
-        { error: 'Messages array is required' },
-        { status: 400 }
+        { error: "Messages array is required" },
+        { status: 400 },
       );
     }
 
     if (!process.env.ANTHROPIC_API_KEY) {
       return NextResponse.json(
-        { error: 'Claude API key not configured' },
-        { status: 500 }
+        { error: "Claude API key not configured" },
+        { status: 500 },
       );
     }
 
@@ -79,9 +85,13 @@ export async function POST(request: NextRequest) {
               maxTokens: 4096,
               enableCache: true,
             })) {
-              controller.enqueue(encoder.encode(`data: ${JSON.stringify({ content: chunk })}\n\n`));
+              controller.enqueue(
+                encoder.encode(
+                  `data: ${JSON.stringify({ content: chunk })}\n\n`,
+                ),
+              );
             }
-            controller.enqueue(encoder.encode('data: [DONE]\n\n'));
+            controller.enqueue(encoder.encode("data: [DONE]\n\n"));
             controller.close();
           } catch (error) {
             controller.error(error);
@@ -91,9 +101,9 @@ export async function POST(request: NextRequest) {
 
       return new Response(stream, {
         headers: {
-          'Content-Type': 'text/event-stream',
-          'Cache-Control': 'no-cache',
-          'Connection': 'keep-alive',
+          "Content-Type": "text/event-stream",
+          "Cache-Control": "no-cache",
+          Connection: "keep-alive",
         },
       });
     }
@@ -122,7 +132,7 @@ export async function POST(request: NextRequest) {
         timestamp: Date.now(),
         model: response.model,
       },
-      template.system
+      template.system,
     );
 
     // Return response with metrics
@@ -134,18 +144,15 @@ export async function POST(request: NextRequest) {
       cached: false,
     });
   } catch (error) {
-    console.error('Claude API error:', error);
-    
+    console.error("Claude API error:", error);
+
     if (error instanceof Error) {
-      return NextResponse.json(
-        { error: error.message },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
-    
+
     return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
+      { error: "Internal server error" },
+      { status: 500 },
     );
   }
 }
@@ -169,10 +176,10 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('Stats error:', error);
+    console.error("Stats error:", error);
     return NextResponse.json(
-      { error: 'Failed to fetch statistics' },
-      { status: 500 }
+      { error: "Failed to fetch statistics" },
+      { status: 500 },
     );
   }
 }
@@ -182,13 +189,13 @@ export async function GET(request: NextRequest) {
  */
 function getTemplate(type?: string) {
   switch (type) {
-    case 'property-search':
+    case "property-search":
       return propertySearchTemplate;
-    case 'home-valuation':
+    case "home-valuation":
       return homeValuationTemplate;
-    case 'customer-support':
+    case "customer-support":
       return customerSupportTemplate;
-    case 'real-estate-agent':
+    case "real-estate-agent":
     default:
       return realEstateAgentTemplate;
   }

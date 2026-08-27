@@ -6,6 +6,10 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { POST } from "./route";
 
+vi.mock("@/lib/botid", () => ({
+  denyIfBot: vi.fn().mockResolvedValue(null),
+}));
+
 // Mock FUB client
 vi.mock("@/lib/fub/client", () => ({
   fubClient: {

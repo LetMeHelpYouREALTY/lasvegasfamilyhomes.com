@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { headers } from "next/headers";
+import { BotIdClient } from "botid/client";
 import { getDomainConfig } from "@/lib/domain-config";
+import { BOTID_PROTECTED_ROUTES } from "@/lib/botid-protect";
 import { buildMetadata } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
@@ -27,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <head>
+        <BotIdClient protect={BOTID_PROTECTED_ROUTES} />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.js"
           strategy="afterInteractive"
