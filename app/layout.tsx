@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from "geist/font/sans";
+import { Montserrat, Tenor_Sans } from "next/font/google";
 import "./globals.css";
 import { headers } from "next/headers";
 import { BotIdClient } from "botid/client";
@@ -9,10 +9,23 @@ import { buildMetadata } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 
+const tenorSans = Tenor_Sans({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-tenor",
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#1d4ed8",
+  themeColor: "#1A1A1A",
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,7 +40,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={GeistSans.className}>
+    <html
+      lang="en"
+      className={`${tenorSans.variable} ${montserrat.variable}`}
+    >
       <head>
         <BotIdClient protect={BOTID_PROTECTED_ROUTES} />
         <Script
@@ -48,7 +64,7 @@ export default function RootLayout({
           window.widgetTracker("send","pageview");
         `}</Script>
       </head>
-      <body>
+      <body className="font-sans">
         {children}
         <Analytics />
       </body>

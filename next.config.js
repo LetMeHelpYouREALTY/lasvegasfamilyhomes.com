@@ -34,6 +34,26 @@ const nextConfig = {
         destination: "https://lasvegasfamilyhomes.com/:path*",
         permanent: true,
       },
+      {
+        source: "/Marketrends",
+        destination: "/market-trends",
+        permanent: true,
+      },
+      {
+        source: "/Listing&Sales",
+        destination: "/coming-soon",
+        permanent: true,
+      },
+      {
+        source: "/agent/jordan-pollack",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/agent/jordan-pollack-1",
+        destination: "/about",
+        permanent: true,
+      },
     ];
   },
 

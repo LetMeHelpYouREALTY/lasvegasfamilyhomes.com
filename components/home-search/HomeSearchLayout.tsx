@@ -27,7 +27,7 @@ export default function HomeSearchLayout({ config }: HomeSearchLayoutProps) {
         />
       ))}
       <Navbar />
-      <main className="pt-16">
+      <main className="pt-[88px]">
         <HomeSearchExperience
           config={config}
           filters={<RealScoutAdvancedSearch agentId={REALSCOUT_AGENT_ID} />}

@@ -63,6 +63,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       changeFrequency: "monthly" as const,
     },
+    {
+      url: `${baseUrl}/listing-agency`,
+      priority: 0.8,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/buyer-tenant-representation`,
+      priority: 0.8,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/estate-management`,
+      priority: 0.8,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/vacation-rental-portfolio`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      url: `${baseUrl}/off-market-listings`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      url: `${baseUrl}/agent-partnerships`,
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/market-trends`,
+      priority: 0.8,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      priority: 0.7,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      url: `${baseUrl}/opt-in`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/terms-and-conditions`,
+      priority: 0.4,
+      changeFrequency: "yearly" as const,
+    },
+    {
+      url: `${baseUrl}/coming-soon`,
+      priority: 0.5,
+      changeFrequency: "monthly" as const,
+    },
   ];
 
   // Service pages
@@ -235,6 +290,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const blogPages = [
+    {
+      url: `${baseUrl}/blog/summer-entertaining-ideas-for-your-summerlin-home`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/blog/the-best-cafes-and-coffee-spots-in-summerlin`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    },
+    {
+      url: `${baseUrl}/blog/why-the-ridges-most-expensive-listings-rarely-linger`,
+      priority: 0.6,
+      changeFrequency: "monthly" as const,
+    },
+  ];
+
   const homeSearchPages = generateAllHomeSearchUrls()
     .filter(
       (path) => path !== "/home-search" && path !== "/home-search/listings",
@@ -252,6 +325,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...sellerPersonaPages,
     ...fiftyPlusCommunityPages,
     ...neighborhoodPages,
+    ...blogPages,
     ...homeSearchPages,
   ];
 

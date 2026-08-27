@@ -12,11 +12,11 @@ export const businessInfo = {
     addressCountry: "US",
   },
   phone: {
-    display: "(702) 500-1942",
-    tel: "+17025001942",
+    display: "(702) 222-1964",
+    tel: "+17022221964",
   },
-  email: "homes@heyberkshire.com",
-  url: "https://heyberkshire.com",
+  email: "DrJan@BHHSNV.com",
+  url: "https://lasvegasfamilyhomes.com",
 
   // Business Details
   license: "S.0197614.LLC",

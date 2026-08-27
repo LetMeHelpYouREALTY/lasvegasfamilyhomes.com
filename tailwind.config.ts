@@ -4,10 +4,22 @@ const config = {
   content: ["./app/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      extend: {
-        fontFamily: {
-          sans: ["var(--font-geist-sans)"],
+      fontFamily: {
+        sans: ["var(--font-montserrat)", "sans-serif"],
+        serif: ["var(--font-tenor)", "serif"],
+        display: ["var(--font-tenor)", "serif"],
+      },
+      colors: {
+        luxury: {
+          ink: "#1A1A1A",
+          charcoal: "#141414",
+          muted: "#5e5e5e",
+          gold: "#d6b056",
+          cream: "#f6f4f0",
         },
+      },
+      letterSpacing: {
+        luxury: "0.22em",
       },
       keyframes: {
         "accordion-down": {

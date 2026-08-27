@@ -1,223 +1,185 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
+import { ChevronDown, X } from "lucide-react";
+import { luxuryNav, sidemenu, type SidemenuItem } from "@/lib/luxury";
+import ContactModal, { openContactModal } from "@/components/luxury/ContactModal";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
+  const isHome = pathname === "/";
+  const overlay = isHome && !scrolled && !menuOpen;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const mainNavLinks = [
-    { href: "/", label: "Home", external: false },
-    { href: "/home-search/listings", label: "Properties", external: false },
-    { href: "/neighborhoods", label: "Neighborhoods", external: false },
-    { href: "/about", label: "About", external: false },
-    { href: "/contact", label: "Contact", external: false },
-  ];
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
-  const serviceLinks = [
-    { href: "/home-search", label: "Home Search" },
-    { href: "/buyers", label: "Home Buying" },
-    { href: "/sellers", label: "Home Selling" },
-    { href: "/luxury-homes", label: "Luxury Homes" },
-    { href: "/55-plus-communities", label: "55+ Communities" },
-    { href: "/new-construction", label: "New Construction" },
-    { href: "/market-report", label: "Market Report" },
-    { href: "/market-insights", label: "Market Insights" },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300 ${
-        isScrolled ? "py-2" : "py-3"
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center">
-          {/* Brand Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight">
-              Berkshire Hathaway
-              <span className="text-blue-600"> HomeServices</span>
-            </span>
-            <span className="text-xs text-slate-500 hidden sm:block">
-              Nevada Properties
-            </span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-5">
-            {mainNavLinks.map((link) =>
-              link.external ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm"
-                >
-                  {link.label}
-                </a>
-              ) : (
+    <>
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+          overlay ? "bg-transparent text-white" : "bg-white text-luxury-ink shadow-sm",
+        )}
+      >
+        <nav
+          className="relative mx-auto flex h-[88px] max-w-[1400px] items-center justify-between px-4 md:px-8"
+          aria-label="Main navigation"
+        >
+          <ul className="hidden items-center gap-8 lg:flex">
+            {luxuryNav.left.map((link) => (
+              <li key={link.href}>
                 <Link
-                  key={link.href}
                   href={link.href}
-                  className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm"
+                  className="font-sans text-[11px] uppercase tracking-luxury"
                 >
                   {link.label}
                 </Link>
-              ),
-            )}
+              </li>
+            ))}
+          </ul>
 
-            {/* Services Dropdown */}
-            <div className="relative">
-              <button
-                className="flex items-center text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded-md px-2 py-1"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-                onMouseEnter={() => setIsServicesOpen(true)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setIsServicesOpen(!isServicesOpen);
-                  } else if (e.key === "Escape") {
-                    setIsServicesOpen(false);
-                  }
-                }}
-                aria-expanded={isServicesOpen}
-                aria-haspopup="true"
-                aria-label="Services menu"
-              >
-                Services
-                <ChevronDown className="h-4 w-4 ml-1" aria-hidden="true" />
-              </button>
+          <Link
+            href="/"
+            className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center text-center"
+          >
+            <span className="font-serif text-lg leading-none tracking-[0.28em] md:text-xl">
+              DR. JAN DUFFY
+            </span>
+            <span className="mt-1 font-sans text-[9px] uppercase tracking-[0.32em] opacity-80">
+              Las Vegas Family Homes
+            </span>
+          </Link>
 
-              {isServicesOpen && (
-                <div
-                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
-                  onMouseLeave={() => setIsServicesOpen(false)}
-                  role="menu"
-                  aria-orientation="vertical"
-                >
-                  {serviceLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block px-4 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 focus-visible:outline-none focus-visible:bg-blue-50 focus-visible:text-blue-600"
-                      onClick={() => setIsServicesOpen(false)}
-                      role="menuitem"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942" className="flex items-center gap-2">
-                <Phone className="h-4 w-4" />
-                <span className="hidden xl:inline">(702) 500-1942</span>
-                <span className="xl:hidden">Call</span>
-              </Link>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center gap-3">
-            <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942">
-                <Phone className="h-4 w-4" />
-              </Link>
-            </Button>
+          <div className="ml-auto flex items-center gap-6">
             <button
-              className="text-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 rounded-md p-1"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-              aria-expanded={isMobileMenuOpen}
+              type="button"
+              onClick={openContactModal}
+              className="hidden font-sans text-[11px] uppercase tracking-luxury lg:inline"
             >
-              {isMobileMenuOpen ? (
-                <X size={24} aria-hidden="true" />
+              Contact Us
+            </button>
+            <button
+              type="button"
+              className="flex h-10 w-10 items-center justify-center"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              {menuOpen ? (
+                <X className="h-5 w-5" />
               ) : (
-                <Menu size={24} aria-hidden="true" />
+                <span className="flex flex-col gap-[5px]" aria-hidden="true">
+                  <span className="block h-px w-6 bg-current" />
+                  <span className="block h-px w-6 bg-current" />
+                  <span className="block h-px w-6 bg-current" />
+                </span>
               )}
             </button>
           </div>
-        </div>
+        </nav>
+      </header>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-slate-200">
-            <div className="flex flex-col space-y-1 pt-4">
-              {mainNavLinks.map((link) =>
-                link.external ? (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ),
-              )}
-
-              {/* Services Section */}
-              <div className="border-t border-slate-200 pt-2 mt-2">
-                <span className="text-xs font-semibold text-slate-500 px-3 uppercase">
-                  Services
-                </span>
-                {serviceLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded block"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
-
-              <div className="pt-4">
-                <Button
-                  asChild
-                  className="bg-blue-600 hover:bg-blue-700 w-full"
-                >
-                  <Link
-                    href="tel:+17025001942"
-                    className="flex items-center justify-center gap-2"
-                  >
-                    <Phone className="h-4 w-4" />
-                    Call Dr. Jan: (702) 500-1942
-                  </Link>
-                </Button>
-              </div>
-            </div>
+      {menuOpen && (
+        <div className="fixed inset-0 z-40 bg-white pt-[88px] text-luxury-ink">
+          <div className="mx-auto h-full max-w-lg overflow-y-auto px-8 py-10">
+            <ul className="space-y-1">
+              {sidemenu.map((item) => (
+                <SidemenuRow
+                  key={item.type === "group" ? item.label : item.href + item.label}
+                  item={item}
+                  openGroup={openGroup}
+                  setOpenGroup={setOpenGroup}
+                />
+              ))}
+            </ul>
           </div>
-        )}
-      </div>
-    </nav>
+        </div>
+      )}
+
+      <button
+        type="button"
+        onClick={openContactModal}
+        className="fixed bottom-6 right-6 z-40 hidden rounded-full bg-white px-5 py-3 font-sans text-[11px] uppercase tracking-luxury text-luxury-ink shadow-lg md:flex"
+      >
+        Contact Us
+      </button>
+
+      <ContactModal />
+    </>
+  );
+}
+
+function SidemenuRow({
+  item,
+  openGroup,
+  setOpenGroup,
+}: {
+  item: SidemenuItem;
+  openGroup: string | null;
+  setOpenGroup: (v: string | null) => void;
+}) {
+  if (item.type === "link") {
+    return (
+      <li>
+        <Link
+          href={item.href}
+          className="block py-3 font-serif text-2xl"
+        >
+          {item.label}
+        </Link>
+      </li>
+    );
+  }
+
+  const open = openGroup === item.label;
+  return (
+    <li>
+      <button
+        type="button"
+        className="flex w-full items-center justify-between py-3 font-serif text-2xl"
+        aria-expanded={open}
+        onClick={() => setOpenGroup(open ? null : item.label)}
+      >
+        {item.label}
+        <ChevronDown
+          className={cn("h-5 w-5 transition-transform", open && "rotate-180")}
+        />
+      </button>
+      {open && (
+        <ul className="mb-4 space-y-2 border-l border-neutral-200 pl-4">
+          {item.children.map((child) => (
+            <li key={child.href + child.label}>
+              <Link
+                href={child.href}
+                className="block py-1 font-sans text-sm uppercase tracking-luxury text-luxury-muted"
+              >
+                {child.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
   );
 }

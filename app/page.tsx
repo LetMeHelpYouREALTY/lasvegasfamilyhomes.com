@@ -1,221 +1,285 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/layouts/Navbar";
-import RealScoutListings from "@/components/realscout/RealScoutListings";
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import ReviewsSection from "@/components/sections/ReviewsSection";
-import FAQSection from "@/components/sections/FAQSection";
-import Footer from "@/components/layouts/Footer";
+import Image from "next/image";
 import Link from "next/link";
+import Navbar from "@/components/layouts/Navbar";
+import Footer from "@/components/layouts/Footer";
+import ConnectForm from "@/components/luxury/ConnectForm";
+import NapBlock, { MlsDisclaimer } from "@/components/luxury/NapBlock";
+import { WorkWithUs } from "@/components/luxury/PageHero";
+import FAQSection from "@/components/sections/FAQSection";
 import {
-  Phone,
-  Home as HomeIcon,
-  TrendingUp,
-  Shield,
-  Users,
-} from "lucide-react";
-import { getPageDomainConfig } from "@/lib/get-domain-config";
+  aboutCopy,
+  blogPosts,
+  collectionCategories,
+  localBusinessJsonLd,
+  marketPresence,
+} from "@/lib/luxury";
 import { DEFAULT_CONFIG } from "@/lib/domain-config";
 import { buildMetadata } from "@/lib/seo";
+import { REALSCOUT_AGENT_ID } from "@/lib/home-search";
 
-export const metadata: Metadata = buildMetadata(DEFAULT_CONFIG, { path: "/" });
+export const metadata: Metadata = buildMetadata(
+  {
+    ...DEFAULT_CONFIG,
+    heroHeadline: "Estate Rentals and Sales",
+    description:
+      "Extraordinary family homes and estates in Las Vegas, NV — whether for a season or a lifetime. Sales, leases, and off-market opportunities with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
+  },
+  { path: "/" },
+);
 
-export default async function Home() {
-  const config = await getPageDomainConfig();
-
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
-    url: `https://${config.domain !== "default" ? config.domain : "lasvegasfamilyhomes.com"}`,
-    telephone: "+17022221964",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "9406 W Lake Mead Blvd, Suite 100",
-      addressLocality: "Las Vegas",
-      addressRegion: "NV",
-      postalCode: "89134",
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Which Las Vegas areas does Dr. Jan Duffy cover?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Dr. Jan Duffy represents buyers and sellers across Las Vegas, Henderson, Summerlin, The Ridges, Skye Canyon, Centennial Hills, Inspirada, Green Valley, and Mountain's Edge.",
+      },
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
+    {
+      "@type": "Question",
+      name: "Do you handle both sales and estate rentals?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. The practice covers residential sales, luxury leases, vacation rentals, and off-market opportunities throughout the Las Vegas Valley.",
+      },
     },
-  };
+    {
+      "@type": "Question",
+      name: "How do I search live MLS listings?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Use the Home Search portal on this site. Listings are powered by RealScout and the Greater Las Vegas Association of REALTORS® MLS.",
+      },
+    },
+  ],
+};
 
+export default function Home() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessJsonLd),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navbar />
       <main>
-        {/* Domain-Aware Hero */}
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
+        <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-luxury-charcoal text-white">
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: "url('/Image/hero_bg_1.jpg')" }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: "url('/images/hero/estate.jpg')" }}
           />
-          <div className="relative z-10 container mx-auto px-4 text-center">
-            {config.ctaBadge && (
-              <span className="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6">
-                {config.ctaBadge}
-              </span>
-            )}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              {config.heroHeadline}
-            </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
-              {config.heroSubheadline}
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="relative z-10 mx-auto max-w-4xl px-6 pt-20 text-center">
+            <h1 className="text-white">Estate Rentals and Sales</h1>
+            <p className="mt-6 font-sans text-base text-white/85 md:text-lg">
+              Extraordinary Estates in Las Vegas, NV, Whether for a Season or a
+              Lifetime.
             </p>
-
-            {/* RealScout Search Widget */}
-            <div className="mb-8 flex justify-center">
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
+              <Link
+                href="/vacation-rental-portfolio"
+                className="border-b border-white/70 pb-1 font-sans text-xs uppercase tracking-luxury"
+              >
+                Vacation Rentals
+              </Link>
+              <Link
+                href="/off-market-listings"
+                className="border-b border-white/70 pb-1 font-sans text-xs uppercase tracking-luxury"
+              >
+                For Sale &amp; Off Market Listings
+              </Link>
+            </div>
+            <div className="realscout-wrapper mt-12">
               <div
                 dangerouslySetInnerHTML={{
-                  __html: `<realscout-simple-search agent-encoded-id="${config.realscoutAgentId}"></realscout-simple-search>`,
+                  __html: `<realscout-simple-search agent-encoded-id="${REALSCOUT_AGENT_ID}"></realscout-simple-search>`,
                 }}
               />
             </div>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">500+</span>
-                <span>Families Helped</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">30+ Years</span>
-                <span>Las Vegas Experience</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">4.9★</span>
-                <span>Client Rating</span>
-              </div>
-            </div>
           </div>
         </section>
 
-        {/* Value Proposition */}
-        <section className="py-16 md:py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Why Work With Dr. Jan Duffy?
-              </h2>
-              <p className="text-lg text-slate-600">
-                Berkshire Hathaway HomeServices Nevada Properties — the most
-                trusted name in Las Vegas real estate.
-              </p>
+        <section className="lp-section bg-white">
+          <div className="lp-container max-w-3xl text-center">
+            <h2>About Las Vegas Family Homes</h2>
+            <div className="mt-4 flex flex-col items-center justify-center gap-1 font-sans text-[11px] uppercase tracking-luxury text-luxury-muted md:flex-row md:gap-6">
+              <span>{aboutCopy.subtitleLeft}</span>
+              <span>{aboutCopy.subtitleRight}</span>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              {[
-                {
-                  icon: Shield,
-                  title: "Trusted Brand",
-                  desc: "Backed by Warren Buffett's Berkshire Hathaway — unmatched integrity",
-                },
-                {
-                  icon: Users,
-                  title: "50K+ Network",
-                  desc: "Global referral network for seamless moves to or from any market",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "$127M+ Sold",
-                  desc: "Proven results across every Las Vegas neighborhood since 2008",
-                },
-                {
-                  icon: HomeIcon,
-                  title: "Full Service",
-                  desc: "Buying, selling, 55+, luxury, investment — one expert handles it all",
-                },
-              ].map(({ icon: Icon, title, desc }) => (
-                <div key={title} className="text-center p-6">
-                  <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <Icon className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <h3 className="font-bold text-lg mb-2">{title}</h3>
-                  <p className="text-slate-600 text-sm">{desc}</p>
-                </div>
+            <div className="mt-10 space-y-5 text-left text-sm leading-7 text-luxury-muted md:text-[15px]">
+              {aboutCopy.paragraphs.map((p) => (
+                <p key={p.slice(0, 40)}>{p}</p>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Market Stats */}
-        <section className="py-16 bg-slate-900 text-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold mb-3">
-                {config.neighborhood} Real Estate Market
-              </h2>
-              <p className="text-slate-400">Current data — updated regularly</p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              {[
-                { value: "$450K", label: "Median Price", sub: "+4.2% YoY" },
-                { value: "28", label: "Avg Days on Market", sub: "" },
-                { value: "4,850", label: "Active Listings", sub: "" },
-                { value: "2.1", label: "Months Inventory", sub: "" },
-              ].map(({ value, label, sub }) => (
-                <div key={label} className="text-center">
-                  <div className="text-4xl font-bold text-blue-400 mb-1">
-                    {value}
-                  </div>
-                  <div className="text-slate-300 text-sm">{label}</div>
-                  {sub && (
-                    <div className="text-green-400 text-xs mt-1">{sub}</div>
-                  )}
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-8">
-              <Link
-                href="/market-report"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
-              >
-                Full Market Report
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link href="/about" className="lp-btn lp-btn-outline">
+                About Dr. Jan Duffy
+              </Link>
+              <Link href="/about" className="lp-btn lp-btn-dark">
+                About Las Vegas Family Homes
               </Link>
             </div>
           </div>
         </section>
 
-        <RealScoutListings />
-        <WhyChooseUs />
-        <ReviewsSection />
-        <FAQSection />
-
-        {/* Domain-Specific CTA */}
-        <section className="py-16 md:py-20 bg-blue-600 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {config.ctaHeadline}
-            </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              {config.ctaSubheadline}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+17022221964"
-                className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
-              >
-                <Phone className="h-5 w-5 mr-2" />
-                Call 702-222-1964
-              </a>
-              <Link
-                href="/contact"
-                className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-md font-bold text-lg transition-colors"
-              >
-                Send a Message
-              </Link>
-            </div>
-            <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway
-              HomeServices Nevada Properties
-            </p>
+        <section className="lp-section bg-luxury-cream">
+          <div className="lp-container max-w-3xl">
+            <ConnectForm source="homepage-connect" />
           </div>
         </section>
+
+        <section className="lp-section bg-white">
+          <div className="lp-container">
+            <h2 className="mb-12 text-center">Market Presence</h2>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+              {marketPresence.map((n) => (
+                <Link
+                  key={n.slug}
+                  href={`/neighborhoods/${n.slug}`}
+                  className="group relative block aspect-[4/5] overflow-hidden"
+                >
+                  <Image
+                    src={n.image}
+                    alt={`${n.name} homes in Las Vegas`}
+                    fill
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute inset-0 bg-black/25" />
+                  <span className="absolute inset-x-0 bottom-6 text-center font-serif text-lg text-white md:text-xl">
+                    {n.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <Link href="/neighborhoods" className="lp-btn lp-btn-outline">
+                Show All Neighborhoods
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section className="lp-section bg-luxury-charcoal text-white">
+          <div className="lp-container">
+            <h2 className="text-center text-white">Collection of Fine Homes</h2>
+            <p className="mt-3 text-center font-sans text-[11px] uppercase tracking-luxury text-white/60">
+              Vacation Rental Portfolio &amp; Sales
+            </p>
+            <div className="mt-12">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<realscout-office-listings agent-encoded-id="${REALSCOUT_AGENT_ID}" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR,MF,TC" price-min="500000"></realscout-office-listings>`,
+                }}
+              />
+            </div>
+            <MlsDisclaimer className="mt-10 text-white/45" />
+          </div>
+        </section>
+
+        <section className="grid grid-cols-2 md:grid-cols-4">
+          {collectionCategories.map((cat) => (
+            <Link
+              key={cat.title}
+              href={cat.href}
+              className="group relative block aspect-square overflow-hidden"
+            >
+              <Image
+                src={cat.image}
+                alt={cat.title}
+                fill
+                sizes="(max-width: 768px) 50vw, 25vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <span className="absolute inset-0 bg-black/35" />
+              <span className="absolute inset-0 flex items-center justify-center px-3 text-center font-serif text-lg text-white md:text-2xl">
+                {cat.title}
+              </span>
+            </Link>
+          ))}
+        </section>
+
+        <section className="lp-section bg-white text-center">
+          <div className="lp-container">
+            <h2>Our Clients</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-luxury-muted">
+              Families, executives, and investors who chose Dr. Jan Duffy for
+              Las Vegas, Henderson, and Summerlin — 4.9★ from 200+ reviews.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-8 text-[11px] uppercase tracking-luxury text-luxury-muted">
+              <span>Berkshire Hathaway HomeServices</span>
+              <span>Greater Las Vegas Association of REALTORS®</span>
+              <span>GLVAR MLS</span>
+              <span>Equal Housing Opportunity</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="lp-section bg-luxury-cream">
+          <div className="lp-container">
+            <h2 className="mb-12 text-center">Blogs &amp; Articles</h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {blogPosts.map((post, i) => (
+                <Link
+                  key={post.slug}
+                  href={`/blog/${post.slug}`}
+                  className={i === 0 ? "md:col-span-3" : ""}
+                >
+                  <article className="group">
+                    <div
+                      className={
+                        i === 0
+                          ? "relative aspect-[21/9] overflow-hidden"
+                          : "relative aspect-[4/3] overflow-hidden"
+                      }
+                    >
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        sizes={i === 0 ? "100vw" : "33vw"}
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <h3 className="mt-5 text-xl md:text-2xl">{post.title}</h3>
+                    <p className="mt-2 text-sm text-luxury-muted">
+                      {post.excerpt}
+                    </p>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <NapBlock />
+
+        <section className="lp-section bg-white">
+          <div className="lp-container max-w-3xl">
+            <ConnectForm
+              source="homepage-contact-details"
+              heading="Submit a Message"
+              subheading={`Get in Touch · ${aboutCopy.subtitleLeft}`}
+            />
+          </div>
+        </section>
+
+        <WorkWithUs />
+        <FAQSection
+          title="Questions"
+          subtitle="Typical questions from buyers, sellers, and renters in the Las Vegas Valley."
+        />
       </main>
       <Footer />
     </>

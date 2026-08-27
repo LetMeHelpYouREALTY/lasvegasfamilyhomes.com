@@ -3,59 +3,137 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --luxury-ink: #1a1a1a;
+    --luxury-charcoal: #141414;
+    --luxury-gold: #d6b056;
+    --luxury-muted: #5e5e5e;
+    --section-padding: 96px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-luxury-ink antialiased;
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 16px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-tenor), serif;
+    @apply font-normal tracking-tight text-balance;
+  }
+
+  h1 {
+    @apply text-[42px] leading-[1.1] md:text-[64px] lg:text-[75px];
+  }
+
+  h2 {
+    @apply text-[32px] leading-[1.15] md:text-[42px] lg:text-[48px];
+  }
+
+  h3 {
+    @apply text-[24px] md:text-[30px];
+  }
+
+  p {
+    @apply text-pretty;
+  }
+
   a,
   button {
     @apply transition;
   }
 
   a {
-    @apply text-emerald-500 underline hover:bg-emerald-100
-        outline-0 focus:ring-2 focus:ring-offset-1 focus:ring-emerald-500;
+    @apply text-inherit no-underline outline-none;
+  }
+
+  a:hover {
+    @apply opacity-80;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply outline-none ring-2 ring-luxury-gold ring-offset-2;
   }
 
   ::selection {
-    @apply bg-emerald-200 text-emerald-950;
+    background: #d6b056;
+    color: #141414;
+  }
+}
+
+@layer components {
+  .lp-container {
+    @apply mx-auto w-full max-w-6xl px-4 md:px-8;
   }
 
-  label,
-  strong,
-  b {
-    @apply font-semibold;
+  .lp-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply text-balance;
+  .lp-kicker {
+    @apply font-sans text-[11px] uppercase tracking-luxury text-luxury-muted;
   }
 
-  p {
-    @apply text-pretty;
+  .lp-btn {
+    @apply inline-flex items-center justify-center border px-8 py-3 font-serif text-sm uppercase tracking-[0.18em] transition-colors;
+  }
+
+  .lp-btn-dark {
+    @apply border-luxury-ink bg-luxury-ink text-white hover:bg-transparent hover:text-luxury-ink;
+  }
+
+  .lp-btn-outline {
+    @apply border-luxury-ink bg-transparent text-luxury-ink hover:bg-luxury-ink hover:text-white;
+  }
+
+  .lp-btn-light {
+    @apply border-white bg-transparent text-white hover:bg-white hover:text-luxury-ink;
+  }
+
+  .lp-input {
+    @apply w-full border-0 border-b border-neutral-300 bg-transparent px-0 py-3 font-sans text-sm text-luxury-ink placeholder:text-neutral-400 focus:border-luxury-ink focus:outline-none focus:ring-0;
+  }
+
+  .lp-input-on-dark {
+    @apply border-white/40 text-white placeholder:text-white/60 focus:border-white;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 64px;
   }
 }
 
 /* ===== RealScout Widget Styling ===== */
 
-/* RealScout Simple Search - Desktop */
 realscout-simple-search {
-  --rs-ss-font-primary-color: #1e293b;
+  --rs-ss-font-primary-color: #1a1a1a;
   --rs-ss-searchbar-border-color: #e2e8f0;
   --rs-ss-box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
   --rs-ss-widget-width: 600px !important;
-  --rs-ss-border-radius: 9999px;
+  --rs-ss-border-radius: 0;
   --rs-ss-background-color: rgba(255, 255, 255, 0.95);
 }
 
-/* RealScout Office Listings */
 realscout-office-listings {
-  --rs-listing-divider-color: #2563eb;
+  --rs-listing-divider-color: #d6b056;
   width: 100%;
 }
 
-/* RealScout Advanced Search (home-search filter bar) */
 realscout-advanced-search {
-  --rs-as-button-color: #2563eb;
+  --rs-as-button-color: #1a1a1a;
   --rs-as-button-text-color: #ffffff;
   --rs-as-background-color: #ffffff;
   width: 100%;
@@ -66,7 +144,6 @@ realscout-advanced-search {
   width: 100%;
 }
 
-/* RealScout container wrapper */
 .realscout-wrapper {
   display: flex;
   justify-content: center;
@@ -75,26 +152,22 @@ realscout-advanced-search {
   padding: 0 1rem;
 }
 
-/* Mobile Responsive: Tablet */
 @media (max-width: 768px) {
   realscout-simple-search {
     --rs-ss-widget-width: 100% !important;
     max-width: 500px;
   }
-
-  .realscout-wrapper {
-    padding: 0 1.5rem;
-  }
 }
 
-/* Mobile Responsive: Phone */
 @media (max-width: 480px) {
   realscout-simple-search {
     --rs-ss-widget-width: 100% !important;
     max-width: 100%;
   }
+}
 
-  .realscout-wrapper {
-    padding: 0 1rem;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
