@@ -4,7 +4,7 @@ import "./globals.css";
 import { headers } from "next/headers";
 import { getDomainConfig } from "@/lib/domain-config";
 import { buildMetadata } from "@/lib/seo";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 
 export const viewport: Viewport = {
