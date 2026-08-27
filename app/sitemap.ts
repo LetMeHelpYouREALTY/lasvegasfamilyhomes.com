@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { generateAllHomeSearchUrls } from "@/lib/home-search";
+import { getLpCloneSitemapEntries } from "@/lib/lp-clone";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://lasvegasfamilyhomes.com";
@@ -245,6 +246,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
+  const lpClonePages = getLpCloneSitemapEntries(baseUrl);
+
   const homeSearchPages = generateAllHomeSearchUrls()
     .filter(
       (path) => path !== "/home-search" && path !== "/home-search/listings",
@@ -262,6 +265,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...sellerPersonaPages,
     ...fiftyPlusCommunityPages,
     ...neighborhoodPages,
+    ...lpClonePages,
     ...homeSearchPages,
   ];
 

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CollectionTiles from "@/components/lp/CollectionTiles";
+import LetsConnect from "@/components/lp/LetsConnect";
+import MarketPresence from "@/components/lp/MarketPresence";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
@@ -16,6 +19,7 @@ import {
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { DEFAULT_CONFIG } from "@/lib/domain-config";
 import { buildMetadata } from "@/lib/seo";
+import { marketStats } from "@/lib/site-config";
 
 export const metadata: Metadata = buildMetadata(DEFAULT_CONFIG, { path: "/" });
 
@@ -150,14 +154,32 @@ export default async function Home() {
               <h2 className="text-3xl font-bold mb-3">
                 {config.neighborhood} Real Estate Market
               </h2>
-              <p className="text-slate-400">Current data — updated regularly</p>
+              <p className="text-slate-400">
+                {marketStats.source} — {marketStats.lastUpdated}
+              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { value: "$450K", label: "Median Price", sub: "+4.2% YoY" },
-                { value: "28", label: "Avg Days on Market", sub: "" },
-                { value: "4,850", label: "Active Listings", sub: "" },
-                { value: "2.1", label: "Months Inventory", sub: "" },
+                {
+                  value: marketStats.lasVegas.medianPriceFormatted,
+                  label: "Median Price",
+                  sub: `${marketStats.lasVegas.yearOverYearChange} YoY`,
+                },
+                {
+                  value: String(marketStats.lasVegas.daysOnMarket),
+                  label: "Avg Days on Market",
+                  sub: "",
+                },
+                {
+                  value: marketStats.lasVegas.activeListings.toLocaleString(),
+                  label: "Active Listings",
+                  sub: "",
+                },
+                {
+                  value: marketStats.lasVegas.inventoryMonths.toFixed(1),
+                  label: "Months Inventory",
+                  sub: "",
+                },
               ].map(({ value, label, sub }) => (
                 <div key={label} className="text-center">
                   <div className="text-4xl font-bold text-blue-400 mb-1">
@@ -165,7 +187,7 @@ export default async function Home() {
                   </div>
                   <div className="text-slate-300 text-sm">{label}</div>
                   {sub && (
-                    <div className="text-green-400 text-xs mt-1">{sub}</div>
+                    <div className="text-slate-400 text-xs mt-1">{sub}</div>
                   )}
                 </div>
               ))}
@@ -181,9 +203,15 @@ export default async function Home() {
           </div>
         </section>
 
+        <MarketPresence />
         <RealScoutListings />
+        <CollectionTiles />
         <WhyChooseUs />
         <ReviewsSection />
+        <LetsConnect
+          source="homepage-lets-connect"
+          tags={["lp-clone", "homepage"]}
+        />
         <FAQSection />
 
         {/* Domain-Specific CTA */}

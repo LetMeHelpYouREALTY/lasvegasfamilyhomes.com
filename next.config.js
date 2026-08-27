@@ -34,6 +34,42 @@ const nextConfig = {
         destination: "https://lasvegasfamilyhomes.com/:path*",
         permanent: true,
       },
+      // Luxury Presence URL clones → Las Vegas inventory/service pages
+      {
+        source: "/market-for-sale",
+        destination: "/home-search/listings",
+        permanent: true,
+      },
+      {
+        source: "/market-for-sale/active",
+        destination: "/home-search/listings",
+        permanent: true,
+      },
+      {
+        source: "/market-for-sale/sold",
+        destination: "/sold",
+        permanent: true,
+      },
+      {
+        source: "/market-for-lease",
+        destination: "/for-rent",
+        permanent: true,
+      },
+      {
+        source: "/market-for-lease/:path*",
+        destination: "/for-rent",
+        permanent: true,
+      },
+      {
+        source: "/vacation-rental-portfolio",
+        destination: "/for-rent",
+        permanent: true,
+      },
+      {
+        source: "/estate-management",
+        destination: "/listing-agency",
+        permanent: true,
+      },
     ];
   },
 

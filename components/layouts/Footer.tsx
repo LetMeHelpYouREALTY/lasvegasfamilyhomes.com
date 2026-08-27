@@ -78,10 +78,42 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/sold"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Sold Homes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/for-rent"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Homes for Rent
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/off-market-listings"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Off-Market Listings
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/neighborhoods"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   Neighborhoods
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/testimonials"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Testimonials
                 </Link>
               </li>
               <li>
@@ -149,6 +181,30 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/listing-agency"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Listing Agency
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/buyer-tenant-representation"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Buyer Representation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/agent-partnerships"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Agent Partnerships
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/luxury-homes"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
@@ -197,19 +253,19 @@ export default function Footer() {
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="tel:+17025001942"
+                  href="tel:+17022221964"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  (702) 500-1942
+                  (702) 222-1964
                 </Link>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="mailto:homes@heyberkshire.com"
+                  href="mailto:DrJan@BHHSNV.com"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Homes@HeyBerkshire.com
+                  DrJan@BHHSNV.com
                 </Link>
               </li>
             </ul>
