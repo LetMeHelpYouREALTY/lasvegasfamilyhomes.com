@@ -50,10 +50,10 @@ export default function SecurityPolicyPage() {
                 <li>
                   <strong>Email:</strong>{" "}
                   <a
-                    href="mailto:security@heyberkshire.com"
+                    href="mailto:DrDuffy@bhhsnv.com"
                     className="underline"
                   >
-                    security@heyberkshire.com
+                    DrDuffy@bhhsnv.com
                   </a>
                 </li>
                 <li>
@@ -262,10 +262,10 @@ export default function SecurityPolicyPage() {
               <p className="mb-2">
                 Email:{" "}
                 <a
-                  href="mailto:info@heyberkshire.com"
+                  href="mailto:DrDuffy@bhhsnv.com"
                   className="text-blue-600 underline"
                 >
-                  info@heyberkshire.com
+                  DrDuffy@bhhsnv.com
                 </a>
               </p>
               <p>

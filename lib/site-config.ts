@@ -23,7 +23,7 @@ export const agentInfo = {
   phoneFormatted: "(702) 222-1964",
   phoneTel: "tel:+17022221964",
   phoneE164: "+17022221964",
-  email: "DrJan@BHHSNV.com",
+  email: "DrDuffy@bhhsnv.com",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
 };
 
