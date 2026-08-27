@@ -20,20 +20,11 @@ const nextConfig = {
   // Performance optimizations
   swcMinify: true,
 
-  // Redirect non-www to www
+  // Host canonicalization (www vs apex) belongs in Vercel Domains only.
+  // A Next.js www→apex rule here fought Vercel’s apex→www redirect and
+  // caused ERR_TOO_MANY_REDIRECTS on www.lasvegasfamilyhomes.com.
   async redirects() {
     return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.lasvegasfamilyhomes.com",
-          },
-        ],
-        destination: "https://lasvegasfamilyhomes.com/:path*",
-        permanent: true,
-      },
       {
         source: "/Marketrends",
         destination: "/market-trends",
