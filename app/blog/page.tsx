@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function BlogIndexPage() {
   return (
     <LuxuryShell>
-      <PageHero title="Blogs & Articles" compact />
+      <PageHero title="Blogs & Articles" image="/images/hero/blog.jpg" compact />
       <section className="lp-section bg-white">
         <div className="lp-container grid gap-10 md:grid-cols-3">
           {blogPosts.map((post) => (

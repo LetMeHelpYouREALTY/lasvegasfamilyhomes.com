@@ -16,6 +16,7 @@ export default function OptInPage() {
       <PageHero
         title="Register for Deals"
         subtitle="New listings, quiet shops, and rental inventory — sent when it matches what you asked for."
+        image="/images/hero/coming-soon.jpg"
         compact
       />
       <section className="lp-section bg-white">

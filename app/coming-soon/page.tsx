@@ -15,6 +15,7 @@ export default function ComingSoonPage() {
       <PageHero
         title="September 2026"
         subtitle="A new listing and sales showcase is in production. Register and we will send the drop date."
+        image="/images/hero/coming-soon.jpg"
         compact
       >
         <Link href="/opt-in" className="lp-btn lp-btn-light mt-10">

@@ -18,6 +18,7 @@ export default function ContactPage() {
       <PageHero
         title="Contact Us"
         subtitle="Submit a Message · Get in Touch · NV License S.0197614.LLC"
+        image="/images/hero/contact.jpg"
         compact
       />
       <section className="lp-section bg-white">

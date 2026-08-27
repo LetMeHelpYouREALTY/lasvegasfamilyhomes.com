@@ -64,7 +64,9 @@
   a:focus-visible,
   button:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #d6b056;
+    box-shadow:
+      0 0 0 2px #fff,
+      0 0 0 4px #d6b056;
   }
 
   ::selection {
@@ -109,6 +111,14 @@
 
   .lp-input-on-dark {
     @apply border-white/40 text-white placeholder:text-white/60 focus:border-white;
+  }
+
+  .hero-lede {
+    font-family: var(--font-montserrat), sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0;
   }
 }
 

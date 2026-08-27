@@ -77,10 +77,7 @@ export default function ConnectForm({
         </h3>
         <Link
           href="/home-search/listings"
-          className={cn(
-            "lp-btn mt-8",
-            dark ? "lp-btn-light" : "lp-btn-dark",
-          )}
+          className={cn("lp-btn mt-8", dark ? "lp-btn-light" : "lp-btn-dark")}
         >
           Explore Our Properties
         </Link>

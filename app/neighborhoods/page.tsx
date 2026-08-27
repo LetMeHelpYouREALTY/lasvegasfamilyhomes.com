@@ -18,6 +18,7 @@ export default function NeighborhoodsPage() {
       <PageHero
         title="Areas of Expertise"
         subtitle="Master-planned villages, guard-gated enclaves, and valley neighborhoods — square footage, amenities, and commute, not slogans."
+        image="/images/hero/neighborhoods.jpg"
         compact
       />
       <section className="lp-section bg-white">

@@ -12,10 +12,12 @@ export const LICENSE = agentInfo.license;
 
 export const luxuryNav = {
   left: [
-    { href: "/vacation-rental-portfolio", label: "Vacation Rentals" },
+    { href: "/family-homes", label: "Family Homes" },
     { href: "/neighborhoods", label: "Areas of Expertise" },
   ],
-  right: [{ href: "/contact", label: "Contact Us", action: "contact" as const }],
+  right: [
+    { href: "/contact", label: "Contact Us", action: "contact" as const },
+  ],
 };
 
 export type SidemenuLink = { href: string; label: string; external?: boolean };
@@ -25,6 +27,32 @@ export type SidemenuItem =
 
 export const sidemenu: SidemenuItem[] = [
   { type: "link", href: "/", label: "Home" },
+  {
+    type: "group",
+    label: "Las Vegas Family Homes",
+    children: [
+      { href: "/family-homes", label: "Family Homes Hub" },
+      { href: "/homes-with-yards", label: "Homes with Yards" },
+      { href: "/3-5-bedroom-homes", label: "3–5 Bedroom Homes" },
+      { href: "/single-story-homes", label: "Single-Story Homes" },
+      { href: "/pool-homes", label: "Pool Homes" },
+      {
+        href: "/master-planned-communities",
+        label: "Master-Planned Communities",
+      },
+      { href: "/open-houses", label: "Open Houses" },
+    ],
+  },
+  {
+    type: "group",
+    label: "Buy & Sell",
+    children: [
+      { href: "/buying-a-home-in-las-vegas", label: "Buying a Home" },
+      { href: "/selling-your-las-vegas-home", label: "Selling Your Home" },
+      { href: "/home-valuation", label: "Home Valuation" },
+      { href: "/reviews", label: "Client Reviews" },
+    ],
+  },
   {
     type: "group",
     label: "About",
@@ -147,44 +175,44 @@ export const marketPresence = [
 
 export const collectionCategories = [
   {
+    title: "Homes with Yards",
+    href: "/homes-with-yards",
+    image: "/images/hero/yards.jpg",
+  },
+  {
+    title: "3–5 Bedrooms",
+    href: "/3-5-bedroom-homes",
+    image: "/images/hero/bedrooms.jpg",
+  },
+  {
+    title: "Single-Story",
+    href: "/single-story-homes",
+    image: "/images/hero/single-story.jpg",
+  },
+  {
+    title: "Pool Homes",
+    href: "/pool-homes",
+    image: "/images/collections/pool.jpg",
+  },
+  {
+    title: "Master-Planned",
+    href: "/master-planned-communities",
+    image: "/images/hero/master-planned.jpg",
+  },
+  {
+    title: "Open Houses",
+    href: "/open-houses",
+    image: "/images/hero/open-houses.jpg",
+  },
+  {
     title: "Vacation Rentals",
     href: "/vacation-rental-portfolio",
     image: "/images/collections/rentals.jpg",
   },
   {
-    title: "Off Market Listings",
+    title: "Off Market",
     href: "/off-market-listings",
-    image: "/images/collections/off-market.jpg",
-  },
-  {
-    title: "Estate Management",
-    href: "/estate-management",
-    image: "/images/collections/management.jpg",
-  },
-  {
-    title: "Lake Las Vegas",
-    href: "/neighborhoods/henderson",
-    image: "/images/collections/views.jpg",
-  },
-  {
-    title: "Guard-Gated",
-    href: "/neighborhoods/the-ridges",
-    image: "/images/collections/gated.jpg",
-  },
-  {
-    title: "Luxury Pools",
-    href: "/luxury-homes",
-    image: "/images/collections/pool.jpg",
-  },
-  {
-    title: "Seasonal Rentals",
-    href: "/vacation-rental-portfolio",
-    image: "/images/collections/seasonal.jpg",
-  },
-  {
-    title: "Views",
-    href: "/neighborhoods/summerlin",
-    image: "/images/collections/views.jpg",
+    image: "/images/hero/off-market.jpg",
   },
 ];
 

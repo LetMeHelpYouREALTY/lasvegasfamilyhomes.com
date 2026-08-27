@@ -22,6 +22,24 @@ export default function Footer() {
           <p className="lp-kicker mb-4 text-white/50">Explore</p>
           <ul className="space-y-2 text-sm text-white/80">
             <li>
+              <Link href="/family-homes">Family Homes</Link>
+            </li>
+            <li>
+              <Link href="/homes-with-yards">Homes with Yards</Link>
+            </li>
+            <li>
+              <Link href="/3-5-bedroom-homes">3–5 Bedroom Homes</Link>
+            </li>
+            <li>
+              <Link href="/pool-homes">Pool Homes</Link>
+            </li>
+            <li>
+              <Link href="/open-houses">Open Houses</Link>
+            </li>
+            <li>
+              <Link href="/reviews">Reviews</Link>
+            </li>
+            <li>
               <Link href="/home-search/listings">Home Search</Link>
             </li>
             <li>

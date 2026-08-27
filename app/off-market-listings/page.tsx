@@ -3,6 +3,7 @@ import Link from "next/link";
 import LuxuryShell from "@/components/luxury/LuxuryShell";
 import PageHero from "@/components/luxury/PageHero";
 import ConnectForm from "@/components/luxury/ConnectForm";
+import ImageSplit from "@/components/luxury/ImageSplit";
 import { MlsDisclaimer } from "@/components/luxury/NapBlock";
 import { REALSCOUT_AGENT_ID } from "@/lib/home-search";
 
@@ -18,7 +19,7 @@ export default function OffMarketPage() {
       <PageHero
         title="Listing Portfolio (Sales)"
         subtitle="On-market MLS inventory plus privately shopped homes that never hit the portal first."
-        image="/images/collections/off-market.jpg"
+        image="/images/hero/off-market.jpg"
         compact
       />
       <section className="lp-section bg-white">
@@ -48,6 +49,22 @@ export default function OffMarketPage() {
           <MlsDisclaimer className="mt-10" />
         </div>
       </section>
+      <ImageSplit
+        image="/images/collections/gated.jpg"
+        alt="Guard-gated Las Vegas community entry for off-market listings"
+        className="bg-white"
+      >
+        <p className="lp-kicker">Quiet shops</p>
+        <h2 className="mt-3">Homes That Never Hit the Portal First</h2>
+        <h3 className="mt-4 text-[22px] md:text-[26px]">
+          Neighborhood, bedrooms, and a budget — then we call
+        </h3>
+        <p className="mt-5 text-sm leading-7 text-luxury-muted">
+          Off-market inventory is shared by conversation. Tell us Summerlin,
+          Henderson, or The Ridges plus bedroom count. We do not publish a
+          public feed of private listings.
+        </p>
+      </ImageSplit>
       <section className="lp-section bg-luxury-cream">
         <div className="lp-container max-w-3xl">
           <ConnectForm

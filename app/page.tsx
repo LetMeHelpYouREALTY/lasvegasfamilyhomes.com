@@ -21,9 +21,9 @@ import { REALSCOUT_AGENT_ID } from "@/lib/home-search";
 export const metadata: Metadata = buildMetadata(
   {
     ...DEFAULT_CONFIG,
-    heroHeadline: "Estate Rentals and Sales",
+    heroHeadline: "Las Vegas Family Homes",
     description:
-      "Extraordinary family homes and estates in Las Vegas, NV — whether for a season or a lifetime. Sales, leases, and off-market opportunities with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
+      "Search 3–5 bedroom Las Vegas family homes with yards in Summerlin, Henderson, and Clark County. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
   },
   { path: "/" },
 );
@@ -77,27 +77,35 @@ export default function Home() {
         <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-luxury-charcoal text-white">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/hero/estate.jpg')" }}
+            style={{ backgroundImage: "url('/images/hero/family-homes.jpg')" }}
           />
           <div className="absolute inset-0 bg-black/40" />
           <div className="relative z-10 mx-auto max-w-4xl px-6 pt-20 text-center">
-            <h1 className="text-white">Estate Rentals and Sales</h1>
-            <p className="mt-6 font-sans text-base text-white/85 md:text-lg">
-              Extraordinary Estates in Las Vegas, NV, Whether for a Season or a
-              Lifetime.
-            </p>
+            <h1 className="text-white">Las Vegas Family Homes</h1>
+            <h2 className="hero-lede mt-6 text-white/85">
+              3–5 Bedroom Houses with Yards Across the Valley
+            </h2>
+            <h3 className="hero-lede mt-3 !text-sm text-white/75 md:!text-base">
+              Search Summerlin, Henderson, and Master-Planned Streets
+            </h3>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-10">
               <Link
-                href="/vacation-rental-portfolio"
+                href="/family-homes"
                 className="border-b border-white/70 pb-1 font-sans text-xs uppercase tracking-luxury"
               >
-                Vacation Rentals
+                Family Homes
               </Link>
               <Link
-                href="/off-market-listings"
+                href="/homes-with-yards"
                 className="border-b border-white/70 pb-1 font-sans text-xs uppercase tracking-luxury"
               >
-                For Sale &amp; Off Market Listings
+                Homes with Yards
+              </Link>
+              <Link
+                href="/home-search/listings"
+                className="border-b border-white/70 pb-1 font-sans text-xs uppercase tracking-luxury"
+              >
+                Search MLS
               </Link>
             </div>
             <div className="realscout-wrapper mt-12">
@@ -111,24 +119,35 @@ export default function Home() {
         </section>
 
         <section className="lp-section bg-white">
-          <div className="lp-container max-w-3xl text-center">
-            <h2>About Las Vegas Family Homes</h2>
-            <div className="mt-4 flex flex-col items-center justify-center gap-1 font-sans text-[11px] uppercase tracking-luxury text-luxury-muted md:flex-row md:gap-6">
-              <span>{aboutCopy.subtitleLeft}</span>
-              <span>{aboutCopy.subtitleRight}</span>
+          <div className="lp-container grid items-center gap-10 md:grid-cols-2 md:gap-16">
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/hero/family-homes.jpg"
+                alt="Las Vegas family home at golden hour with Spring Mountains"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
-            <div className="mt-10 space-y-5 text-left text-sm leading-7 text-luxury-muted md:text-[15px]">
-              {aboutCopy.paragraphs.map((p) => (
-                <p key={p.slice(0, 40)}>{p}</p>
-              ))}
-            </div>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/about" className="lp-btn lp-btn-outline">
-                About Dr. Jan Duffy
-              </Link>
-              <Link href="/about" className="lp-btn lp-btn-dark">
-                About Las Vegas Family Homes
-              </Link>
+            <div>
+              <h2>About Las Vegas Family Homes</h2>
+              <div className="mt-4 flex flex-col items-center justify-center gap-1 font-sans text-[11px] uppercase tracking-luxury text-luxury-muted md:items-start md:flex-row md:gap-6">
+                <span>{aboutCopy.subtitleLeft}</span>
+                <span>{aboutCopy.subtitleRight}</span>
+              </div>
+              <div className="mt-10 space-y-5 text-left text-sm leading-7 text-luxury-muted md:text-[15px]">
+                {aboutCopy.paragraphs.map((p) => (
+                  <p key={p.slice(0, 40)}>{p}</p>
+                ))}
+              </div>
+              <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
+                <Link href="/about" className="lp-btn lp-btn-outline">
+                  About Dr. Jan Duffy
+                </Link>
+                <Link href="/family-homes" className="lp-btn lp-btn-dark">
+                  Family Homes Hub
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -175,7 +194,7 @@ export default function Home() {
           <div className="lp-container">
             <h2 className="text-center text-white">Collection of Fine Homes</h2>
             <p className="mt-3 text-center font-sans text-[11px] uppercase tracking-luxury text-white/60">
-              Vacation Rental Portfolio &amp; Sales
+              Search Summerlin, Henderson, and Master-Planned Streets
             </p>
             <div className="mt-12">
               <div
@@ -212,6 +231,15 @@ export default function Home() {
 
         <section className="lp-section bg-white text-center">
           <div className="lp-container">
+            <div className="relative mx-auto mb-10 aspect-[21/9] max-w-4xl overflow-hidden">
+              <Image
+                src="/images/hero/reviews.jpg"
+                alt="Patio overlooking a Las Vegas backyard pool"
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
             <h2>Our Clients</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-luxury-muted">
               Families, executives, and investors who chose Dr. Jan Duffy for

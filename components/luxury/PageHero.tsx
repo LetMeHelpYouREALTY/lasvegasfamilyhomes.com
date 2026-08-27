@@ -12,7 +12,7 @@ type PageHeroProps = {
 export default function PageHero({
   title,
   subtitle,
-  image = "/images/hero/estate.jpg",
+  image = "/images/hero/family-homes.jpg",
   children,
   compact = false,
 }: PageHeroProps) {
@@ -41,7 +41,13 @@ export default function PageHero({
   );
 }
 
-export function WorkWithUs({ className }: { className?: string }) {
+export function WorkWithUs({
+  className,
+  image = "/images/hero/great-room.jpg",
+}: {
+  className?: string;
+  image?: string;
+}) {
   return (
     <section
       className={cn(
@@ -51,7 +57,7 @@ export function WorkWithUs({ className }: { className?: string }) {
     >
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
-        style={{ backgroundImage: "url('/images/hero/interior.jpg')" }}
+        style={{ backgroundImage: `url('${image}')` }}
       />
       <div className="relative z-10 mx-auto max-w-3xl px-6">
         <h2 className="text-white">Work With Us</h2>

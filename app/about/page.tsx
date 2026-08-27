@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import LuxuryShell from "@/components/luxury/LuxuryShell";
 import PageHero from "@/components/luxury/PageHero";
+import ImageSplit from "@/components/luxury/ImageSplit";
 import { aboutCopy, localBusinessJsonLd } from "@/lib/luxury";
 import { agentInfo } from "@/lib/site-config";
 
@@ -50,27 +51,33 @@ export default function AboutPage() {
       <PageHero
         title="Las Vegas Family Homes"
         subtitle="High-intent marketing, off-market access, and advisory representation for Las Vegas, Henderson, and Summerlin."
-        image="/images/hero/interior.jpg"
+        image="/images/hero/about.jpg"
       />
-      <section className="lp-section bg-white">
-        <div className="lp-container max-w-3xl text-center">
-          <p className="lp-kicker">
-            {aboutCopy.subtitleLeft} · {aboutCopy.subtitleRight}
-          </p>
-          <div className="mt-8 space-y-5 text-left text-sm leading-7 text-luxury-muted">
-            {aboutCopy.paragraphs.map((p) => (
-              <p key={p.slice(0, 32)}>{p}</p>
-            ))}
-          </div>
+      <ImageSplit
+        image="/images/hero/family-homes.jpg"
+        alt="Las Vegas family home at golden hour with Spring Mountains"
+      >
+        <p className="lp-kicker">
+          {aboutCopy.subtitleLeft} · {aboutCopy.subtitleRight}
+        </p>
+        <h2 className="mt-3">
+          3–5 Bedroom Houses with Yards Across the Valley
+        </h2>
+        <div className="mt-8 space-y-5 text-left text-sm leading-7 text-luxury-muted">
+          {aboutCopy.paragraphs.map((p) => (
+            <p key={p.slice(0, 32)}>{p}</p>
+          ))}
         </div>
-      </section>
+      </ImageSplit>
       <section className="lp-section bg-luxury-cream">
         <div className="lp-container grid gap-16 md:grid-cols-2">
           {services.map((s) => (
             <article key={s.title}>
               <p className="lp-kicker">{s.kicker}</p>
               <h2 className="mt-3 text-[28px] md:text-[32px]">{s.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-luxury-muted">{s.body}</p>
+              <p className="mt-4 text-sm leading-7 text-luxury-muted">
+                {s.body}
+              </p>
             </article>
           ))}
         </div>

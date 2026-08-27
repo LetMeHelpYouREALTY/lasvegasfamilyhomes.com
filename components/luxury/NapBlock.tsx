@@ -13,7 +13,10 @@ export default function NapBlock() {
             <p className="font-serif text-xl">{nap.name}</p>
             <ul className="mt-6 space-y-4 text-sm text-luxury-muted">
               <li className="flex gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0"
+                  aria-hidden="true"
+                />
                 <span>
                   {nap.street}
                   <br />
@@ -79,7 +82,9 @@ export default function NapBlock() {
 
 export function MlsDisclaimer({ className = "" }: { className?: string }) {
   return (
-    <p className={`text-center text-[11px] leading-relaxed text-neutral-500 ${className}`}>
+    <p
+      className={`text-center text-[11px] leading-relaxed text-neutral-500 ${className}`}
+    >
       Listings displayed are courtesy of the Greater Las Vegas Association of
       REALTORS® Multiple Listing Service. Information is deemed reliable but
       not guaranteed. Listing broker and listing agent information is displayed

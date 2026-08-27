@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import LuxuryShell from "@/components/luxury/LuxuryShell";
 import PageHero from "@/components/luxury/PageHero";
 import ConnectForm from "@/components/luxury/ConnectForm";
+import ImageSplit from "@/components/luxury/ImageSplit";
 import { MlsDisclaimer } from "@/components/luxury/NapBlock";
 import { REALSCOUT_AGENT_ID } from "@/lib/home-search";
 
@@ -17,7 +18,7 @@ export default function VacationRentalsPage() {
       <PageHero
         title="Estate Rental Listings"
         subtitle="Seasonal stays, executive leases, and mid-term placements across the Las Vegas Valley."
-        image="/images/collections/rentals.jpg"
+        image="/images/hero/vacation.jpg"
         compact
       />
       <section className="lp-section bg-white">
@@ -35,7 +36,23 @@ export default function VacationRentalsPage() {
           <MlsDisclaimer className="mt-8" />
         </div>
       </section>
-      <section className="lp-section bg-luxury-cream">
+      <ImageSplit
+        image="/images/collections/rentals.jpg"
+        alt="Las Vegas vacation rental living room opening to a pool"
+        className="bg-luxury-cream"
+      >
+        <p className="lp-kicker">Seasonal · Executive · Mid-term</p>
+        <h2 className="mt-3">Estate Rentals Across the Valley</h2>
+        <h3 className="mt-4 text-[22px] md:text-[26px]">
+          Bedroom count, dates, and a budget — then we match
+        </h3>
+        <p className="mt-5 text-sm leading-7 text-luxury-muted">
+          Live MLS search above is for-sale inventory. For current leases, send
+          dates, bedroom count, and a budget — we match from the rental
+          portfolio and cooperating listings.
+        </p>
+      </ImageSplit>
+      <section className="lp-section bg-white">
         <div className="lp-container max-w-3xl">
           <ConnectForm source="vacation-rentals" />
         </div>
