@@ -31,6 +31,7 @@ export default function Navbar() {
   const serviceLinks = [
     { href: "/home-search", label: "Home Search" },
     { href: "/off-market-listings", label: "Off-Market" },
+    { href: "/vacation-rentals", label: "Vacation Rentals" },
     { href: "/listing-agency", label: "Listing Agency" },
     { href: "/buyer-tenant-representation", label: "Buyer Representation" },
     { href: "/agent-partnerships", label: "Agent Partnerships" },
@@ -38,8 +39,6 @@ export default function Navbar() {
     { href: "/buyers", label: "Home Buying" },
     { href: "/sellers", label: "Home Selling" },
     { href: "/luxury-homes", label: "Luxury Homes" },
-    { href: "/vacation-rentals", label: "Vacation Rentals" },
-    { href: "/off-market", label: "Off-Market Listings" },
     { href: "/55-plus-communities", label: "55+ Communities" },
     { href: "/new-construction", label: "New Construction" },
     { href: "/market-report", label: "Market Report" },

@@ -119,7 +119,11 @@ export const LP_REDIRECTS: LpRedirect[] = [
   },
   {
     source: "/vacation-rental-portfolio",
-    destination: "/for-rent",
+    destination: "/vacation-rentals",
+  },
+  {
+    source: "/off-market",
+    destination: "/off-market-listings",
   },
   {
     source: "/estate-management",
@@ -142,6 +146,11 @@ export const COLLECTION_TILES: CollectionTile[] = [
     href: "/for-rent",
     title: "For Rent",
     subtitle: "Houses, condos, and townhomes for lease",
+  },
+  {
+    href: "/vacation-rentals",
+    title: "Vacation Rentals",
+    subtitle: "Seasonal and furnished leases",
   },
   {
     href: "/off-market-listings",
@@ -349,7 +358,7 @@ export const FOR_RENT_INVENTORY: InventoryPageConfig = {
     {
       question: "Do you manage vacation rentals?",
       answer:
-        "No. Search here is long-term for-rent MLS inventory. If you need a mid-term corporate lease, use Let’s Connect and say so in the message.",
+        "Long-term leases stay on this page. Seasonal and furnished stays are on /vacation-rentals. Call for either.",
     },
     {
       question: "Can Dr. Jan represent a tenant?",

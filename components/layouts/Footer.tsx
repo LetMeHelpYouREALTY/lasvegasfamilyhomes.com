@@ -94,6 +94,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/vacation-rentals"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Vacation Rentals
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/off-market-listings"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >

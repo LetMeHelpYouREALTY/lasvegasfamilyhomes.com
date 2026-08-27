@@ -62,7 +62,12 @@ const nextConfig = {
       },
       {
         source: "/vacation-rental-portfolio",
-        destination: "/for-rent",
+        destination: "/vacation-rentals",
+        permanent: true,
+      },
+      {
+        source: "/off-market",
+        destination: "/off-market-listings",
         permanent: true,
       },
       {

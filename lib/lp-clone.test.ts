@@ -49,8 +49,9 @@ describe("Luxury Presence site clone catalog", () => {
         { source: "/market-for-lease", destination: "/for-rent" },
         {
           source: "/vacation-rental-portfolio",
-          destination: "/for-rent",
+          destination: "/vacation-rentals",
         },
+        { source: "/off-market", destination: "/off-market-listings" },
       ]),
     );
     for (const redirect of LP_REDIRECTS) {
@@ -82,6 +83,7 @@ describe("Luxury Presence site clone catalog", () => {
       "Homes for Sale",
       "Sold",
       "For Rent",
+      "Vacation Rentals",
       "Off-Market Listings",
       "Gated",
       "Pools",
