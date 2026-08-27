@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
+import { denyIfBot } from "@/lib/botid";
 
 const openrouter = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
@@ -7,11 +8,19 @@ const openrouter = new OpenAI({
 });
 
 export async function POST(request: NextRequest) {
+  const botResponse = await denyIfBot();
+  if (botResponse) {
+    return botResponse;
+  }
+
   try {
     const { propertyDetails } = await request.json();
 
     if (!propertyDetails) {
-      return NextResponse.json({ error: "Property details are required" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Property details are required" },
+        { status: 400 },
+      );
     }
 
     if (!process.env.OPENROUTER_API_KEY) {

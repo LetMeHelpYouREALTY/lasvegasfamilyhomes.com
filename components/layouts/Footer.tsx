@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+} from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,10 +17,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-xl mb-4">Berkshire Hathaway HomeServices</h3>
+            <h3 className="font-bold text-xl mb-4">
+              Berkshire Hathaway HomeServices
+            </h3>
             <p className="text-slate-300 mb-4 text-sm">
-              Nevada Properties - Your trusted real estate partner in Las Vegas, Henderson, and
-              Summerlin. Backed by Warren Buffett's legacy of trust.
+              Nevada Properties - Your trusted real estate partner in Las Vegas,
+              Henderson, and Summerlin. Backed by Warren Buffett's legacy of
+              trust.
             </p>
             <div className="flex space-x-4">
               <a
@@ -51,14 +61,52 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="http://drjanduffy.realscout.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/home-search/listings"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   All Properties
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/home-search"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Home Search
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/sold"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Sold Homes
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/for-rent"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Homes for Rent
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/vacation-rentals"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Vacation Rentals
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/off-market-listings"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Off-Market Listings
+                </Link>
               </li>
               <li>
                 <Link
@@ -66,6 +114,14 @@ export default function Footer() {
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   Neighborhoods
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/testimonials"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Testimonials
                 </Link>
               </li>
               <li>
@@ -133,6 +189,30 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/listing-agency"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Listing Agency
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/buyer-tenant-representation"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Buyer Representation
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/agent-partnerships"
+                  className="text-slate-300 hover:text-white transition-colors text-sm"
+                >
+                  Agent Partnerships
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/luxury-homes"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
@@ -181,19 +261,19 @@ export default function Footer() {
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="tel:+17025001942"
+                  href="tel:+17022221964"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  (702) 500-1942
+                  (702) 222-1964
                 </Link>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-blue-400 flex-shrink-0" />
                 <Link
-                  href="mailto:homes@heyberkshire.com"
+                  href="mailto:DrJan@BHHSNV.com"
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
-                  Homes@HeyBerkshire.com
+                  DrJan@BHHSNV.com
                 </Link>
               </li>
             </ul>
@@ -204,25 +284,32 @@ export default function Footer() {
         <div className="border-t border-slate-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm text-center md:text-left">
-              © {currentYear} Berkshire Hathaway HomeServices Nevada Properties. All Rights
-              Reserved.
+              © {currentYear} Berkshire Hathaway HomeServices Nevada
+              Properties. All Rights Reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">
+              <Link
+                href="/faq"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 FAQ
               </Link>
-              <Link href="/sitemap.xml" className="text-slate-400 hover:text-white transition-colors">
+              <Link
+                href="/sitemap.xml"
+                className="text-slate-400 hover:text-white transition-colors"
+              >
                 Sitemap
               </Link>
             </div>
           </div>
           <p className="text-slate-500 text-xs mt-4 text-center">
-            Dr. Jan Duffy, REALTOR® | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada
-            Properties
+            Dr. Jan Duffy, REALTOR® | License S.0197614.LLC | Berkshire
+            Hathaway HomeServices Nevada Properties
           </p>
           <p className="text-slate-600 text-xs mt-2 text-center max-w-3xl mx-auto">
-            When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name
-            synonymous with trust, ethical standards, and financial strength.
+            When you work with a Berkshire Hathaway HomeServices agent, you're
+            backed by a name synonymous with trust, ethical standards, and
+            financial strength.
           </p>
         </div>
       </div>

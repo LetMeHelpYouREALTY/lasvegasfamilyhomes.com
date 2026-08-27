@@ -20,13 +20,22 @@ export default function Navbar() {
 
   const mainNavLinks = [
     { href: "/", label: "Home", external: false },
-    { href: "http://drjanduffy.realscout.com/", label: "Properties", external: true },
+    { href: "/home-search/listings", label: "Properties", external: false },
+    { href: "/sold", label: "Sold", external: false },
+    { href: "/for-rent", label: "For Rent", external: false },
     { href: "/neighborhoods", label: "Neighborhoods", external: false },
     { href: "/about", label: "About", external: false },
     { href: "/contact", label: "Contact", external: false },
   ];
 
   const serviceLinks = [
+    { href: "/home-search", label: "Home Search" },
+    { href: "/off-market-listings", label: "Off-Market" },
+    { href: "/vacation-rentals", label: "Vacation Rentals" },
+    { href: "/listing-agency", label: "Listing Agency" },
+    { href: "/buyer-tenant-representation", label: "Buyer Representation" },
+    { href: "/agent-partnerships", label: "Agent Partnerships" },
+    { href: "/testimonials", label: "Testimonials" },
     { href: "/buyers", label: "Home Buying" },
     { href: "/sellers", label: "Home Selling" },
     { href: "/luxury-homes", label: "Luxury Homes" },
@@ -50,7 +59,9 @@ export default function Navbar() {
               Berkshire Hathaway
               <span className="text-blue-600"> HomeServices</span>
             </span>
-            <span className="text-xs text-slate-500 hidden sm:block">Nevada Properties</span>
+            <span className="text-xs text-slate-500 hidden sm:block">
+              Nevada Properties
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -74,7 +85,7 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
-              )
+              ),
             )}
 
             {/* Services Dropdown */}
@@ -84,10 +95,10 @@ export default function Navbar() {
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
+                  if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
                     setIsServicesOpen(!isServicesOpen);
-                  } else if (e.key === 'Escape') {
+                  } else if (e.key === "Escape") {
                     setIsServicesOpen(false);
                   }
                 }}
@@ -101,7 +112,7 @@ export default function Navbar() {
 
               {isServicesOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50"
+                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg py-2 z-50"
                   onMouseLeave={() => setIsServicesOpen(false)}
                   role="menu"
                   aria-orientation="vertical"
@@ -122,9 +133,9 @@ export default function Navbar() {
             </div>
 
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942" className="flex items-center gap-2">
+              <Link href="tel:+17022221964" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span className="hidden xl:inline">(702) 500-1942</span>
+                <span className="hidden xl:inline">(702) 222-1964</span>
                 <span className="xl:hidden">Call</span>
               </Link>
             </Button>
@@ -133,7 +144,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942">
+              <Link href="tel:+17022221964">
                 <Phone className="h-4 w-4" />
               </Link>
             </Button>
@@ -143,7 +154,11 @@ export default function Navbar() {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              {isMobileMenuOpen ? (
+                <X size={24} aria-hidden="true" />
+              ) : (
+                <Menu size={24} aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
@@ -173,7 +188,7 @@ export default function Navbar() {
                   >
                     {link.label}
                   </Link>
-                )
+                ),
               )}
 
               {/* Services Section */}
@@ -194,13 +209,16 @@ export default function Navbar() {
               </div>
 
               <div className="pt-4">
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full">
+                <Button
+                  asChild
+                  className="bg-blue-600 hover:bg-blue-700 w-full"
+                >
                   <Link
-                    href="tel:+17025001942"
+                    href="tel:+17022221964"
                     className="flex items-center justify-center gap-2"
                   >
                     <Phone className="h-4 w-4" />
-                    Call Dr. Jan: (702) 500-1942
+                    Call Dr. Jan: (702) 222-1964
                   </Link>
                 </Button>
               </div>

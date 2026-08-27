@@ -1,28 +1,29 @@
-// Site Configuration - HeyBerkshire.com
-// Berkshire Hathaway HomeServices Nevada Properties
+// Site Configuration — lasvegasfamilyhomes.com
+// Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada Properties
 
 export const siteConfig = {
-  name: "HeyBerkshire",
-  fullName: "Berkshire Hathaway HomeServices Nevada Properties",
-  tagline: "Private Client Real Estate Advisory",
-  /** Full brand line for titles and OG: Berkshire Hathaway HomeServices Nevada Properties | Private Client Real Estate Advisory */
+  name: "Las Vegas Family Homes",
+  fullName: "Las Vegas Family Homes | Dr. Jan Duffy, REALTOR®",
+  tagline:
+    "3–5 bedroom homes, yards, and master-planned living across the Las Vegas Valley",
   brandLine:
-    "Berkshire Hathaway HomeServices Nevada Properties | Private Client Real Estate Advisory",
-  brandName: "Berkshire Hathaway HomeServices",
-  shortName: "BHHS",
-  url: "https://heyberkshire.com",
+    "Las Vegas Family Homes | Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties",
+  brandName: "Las Vegas Family Homes",
+  shortName: "LV Family Homes",
+  url: "https://lasvegasfamilyhomes.com",
   description:
-    "Expert real estate services in Las Vegas and Henderson, NV. Buy, sell, or invest with Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent.",
+    "Search Las Vegas family homes for sale — 3–5 bedroom houses with yards in Summerlin, Henderson, Centennial Hills, Skye Canyon, Inspirada, and Mountain's Edge. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
 };
 
 export const agentInfo = {
   name: "Dr. Jan Duffy",
   title: "REALTOR®",
   license: "S.0197614.LLC",
-  phone: "(702) 500-1942",
-  phoneFormatted: "(702) 500-1942",
-  phoneTel: "tel:+17025001942",
-  email: "homes@heyberkshire.com",
+  phone: "(702) 222-1964",
+  phoneFormatted: "(702) 222-1964",
+  phoneTel: "tel:+17022221964",
+  phoneE164: "+17022221964",
+  email: "DrJan@BHHSNV.com",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
 };
 
@@ -39,34 +40,47 @@ export const officeInfo = {
     lat: 36.1893,
     lng: -115.2821,
   },
-  phone: "(702) 500-1942",
-  phoneTel: "tel:+17025001942",
+  phone: "(702) 222-1964",
+  phoneTel: "tel:+17022221964",
+  hours: {
+    weekday: "Monday–Friday 9am–6pm",
+    weekend: "Saturday 10am–4pm",
+    sunday: "Sunday by appointment",
+  },
+  mapsEmbed:
+    "https://maps.google.com/maps?q=9406+W+Lake+Mead+Blvd+Suite+100,+Las+Vegas,+NV+89134&t=&z=15&ie=UTF8&iwloc=&output=embed",
+  mapsDirections:
+    "https://www.google.com/maps/dir//9406+W+Lake+Mead+Blvd+Suite+100,+Las+Vegas,+NV+89134",
+  googleReviews:
+    "https://www.google.com/search?q=Dr+Jan+Duffy+Berkshire+Hathaway+HomeServices+Nevada+Properties+reviews",
 };
 
-// Market Statistics (Updated January 2026)
+/** Valley-wide stats: Las Vegas REALTORS (LVR) August 2026 single-family report. */
 export const marketStats = {
-  lastUpdated: "January 2026",
+  lastUpdated: "August 2026",
+  source: "Las Vegas REALTORS (LVR) August 2026 statistics",
   lasVegas: {
-    medianPrice: 450000,
-    medianPriceFormatted: "$450,000",
-    yearOverYearChange: "+4.2%",
-    daysOnMarket: 28,
-    activeListings: 4850,
-    closedSales: 2340,
-    inventoryMonths: 2.1,
+    medianPrice: 480000,
+    medianPriceFormatted: "$480,000",
+    yearOverYearChange: "-1.0%",
+    daysOnMarket: 31,
+    activeListings: 7442,
+    closedSales: 2587,
+    inventoryMonths: 4.0,
+    pricePerSqFt: 267,
   },
   henderson: {
-    medianPrice: 485000,
-    medianPriceFormatted: "$485,000",
-    yearOverYearChange: "+5.1%",
-    daysOnMarket: 24,
+    medianPrice: 545000,
+    medianPriceFormatted: "$545,000",
+    yearOverYearChange: "June 2026 Redfin city median",
+    daysOnMarket: 31,
     activeListings: 1280,
   },
   summerlin: {
-    medianPrice: 625000,
-    medianPriceFormatted: "$625,000",
-    yearOverYearChange: "+6.8%",
-    daysOnMarket: 22,
+    medianPrice: 537500,
+    medianPriceFormatted: "$537,500",
+    yearOverYearChange: "June 2026 village mix",
+    daysOnMarket: 35,
     luxuryMedian: 1200000,
     luxuryMedianFormatted: "$1.2M",
   },
@@ -75,11 +89,10 @@ export const marketStats = {
     medianPriceFormatted: "$1.2M",
     activeListings: 890,
     daysOnMarket: 45,
-    pricePerSqFt: 385,
+    pricePerSqFt: 327,
   },
 };
 
-// Agent Stats
 export const agentStats = {
   servingSince: 2008,
   transactionsClosed: 500,
@@ -88,120 +101,155 @@ export const agentStats = {
   reviewCount: 200,
 };
 
-// Value Propositions
 export const valuePropositions = {
   main: "When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name synonymous with trust, ethical standards, and financial strength—the same principles that built Warren Buffett's empire.",
   trust:
     "Berkshire Hathaway HomeServices is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents.",
   expertise:
-    "Serving Las Vegas since 2008 with $127M+ in closed transactions, Dr. Jan Duffy combines deep local market knowledge with the resources of a global brand.",
+    "Serving Las Vegas since 2008 with $127M+ in closed transactions, Dr. Jan Duffy matches buyers with 3–5 bedroom homes, yards, and master-planned amenities across the valley.",
 };
 
-// Neighborhoods served
 export const neighborhoods = [
   {
     name: "Summerlin",
     slug: "summerlin",
-    description: "Master-planned community with parks, trails, and top-rated schools",
-    medianPrice: "$625,000",
-    highlights: ["Red Rock views", "150+ parks", "Top schools", "Golf courses"],
+    description:
+      "Master-planned community with 150+ parks, trails, and Downtown Summerlin",
+    medianPrice: "$537,500",
+    highlights: [
+      "Red Rock views",
+      "150+ parks",
+      "Downtown Summerlin",
+      "Golf courses",
+    ],
   },
   {
     name: "Henderson",
     slug: "henderson",
-    description: "Nevada's second-largest city with family-friendly neighborhoods",
-    medianPrice: "$485,000",
-    highlights: ["Low crime rate", "Excellent schools", "Lake Las Vegas", "Green Valley"],
+    description:
+      "Nevada's second-largest city with master-planned villages and I-215 access",
+    medianPrice: "$545,000",
+    highlights: [
+      "Green Valley",
+      "Inspirada",
+      "Lake Las Vegas",
+      "Parks and trails",
+    ],
   },
   {
     name: "Green Valley",
     slug: "green-valley",
-    description: "Established Henderson community with mature landscaping",
-    medianPrice: "$520,000",
-    highlights: ["Golf courses", "Walking trails", "Shopping", "Parks"],
+    description:
+      "Henderson community with mature landscaping, The District, and golf",
+    medianPrice: "$520,000+",
+    highlights: ["Golf courses", "Walking trails", "The District", "Parks"],
   },
   {
     name: "The Ridges",
     slug: "the-ridges",
-    description: "Ultra-luxury guard-gated community in Summerlin",
+    description: "Guard-gated Summerlin community with custom estates",
     medianPrice: "$2.5M",
-    highlights: ["Celebrity homes", "Custom estates", "Bear's Best Golf", "Strip views"],
+    highlights: [
+      "Custom estates",
+      "Bear's Best Golf",
+      "Strip views",
+      "Guard-gated",
+    ],
   },
   {
     name: "Southern Highlands",
     slug: "southern-highlands",
-    description: "Master-planned luxury community with championship golf",
+    description:
+      "Master-planned community with championship golf and mountain views",
     medianPrice: "$750,000",
-    highlights: ["Golf community", "Guard-gated", "Mountain views", "Luxury amenities"],
+    highlights: [
+      "Golf community",
+      "Guard-gated",
+      "Mountain views",
+      "Club amenities",
+    ],
   },
   {
     name: "North Las Vegas",
     slug: "north-las-vegas",
-    description: "Rapidly growing area with affordable new construction",
-    medianPrice: "$385,000",
-    highlights: ["New construction", "Affordable", "Growing area", "Family-friendly"],
+    description:
+      "Growing area with new construction and 3–4 bedroom floor plans",
+    medianPrice: "$365,000+",
+    highlights: ["New construction", "Aliante", "I-15 access", "Parks"],
   },
   {
     name: "Skye Canyon",
     slug: "skye-canyon",
-    description: "Newer master-planned community in northwest Las Vegas",
-    medianPrice: "$550,000",
-    highlights: ["New homes", "Mountain views", "Modern amenities", "Great schools"],
+    description:
+      "Northwest master-planned community with Skye Center and mountain views",
+    medianPrice: "$565,000",
+    highlights: ["New homes", "Mountain views", "Skye Center", "Parks"],
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
-    description: "Northwest Las Vegas community with mountain proximity",
-    medianPrice: "$495,000",
-    highlights: ["Mountain access", "Parks", "Shopping", "Family-friendly"],
+    description:
+      "Northwest Las Vegas community near Floyd Lamb Park and mountain trails",
+    medianPrice: "$465,000+",
+    highlights: ["Mountain access", "Parks", "Shopping", "3–5 bedroom homes"],
   },
   {
     name: "Inspirada",
     slug: "inspirada",
-    description: "Henderson master-planned community with resort-style living",
-    medianPrice: "$525,000",
-    highlights: ["Resort pools", "Walking trails", "New construction", "Great schools"],
+    description:
+      "Henderson master-planned community with resort pools and walking trails",
+    medianPrice: "$625,000",
+    highlights: ["Resort pools", "Walking trails", "New construction", "Parks"],
   },
   {
-    name: "Mountains Edge",
+    name: "Mountain's Edge",
     slug: "mountains-edge",
-    description: "Southwest Las Vegas master-planned community",
-    medianPrice: "$475,000",
-    highlights: ["Mountain views", "Parks", "Growing area", "Affordable luxury"],
+    description:
+      "Southwest Las Vegas master-planned community with mountain views",
+    medianPrice: "$535,000",
+    highlights: [
+      "Mountain views",
+      "Parks",
+      "Exploration Peak",
+      "3–5 bedroom homes",
+    ],
   },
 ];
 
-// Services offered
 export const services = [
   {
     name: "Home Buying",
     slug: "buyers",
-    description: "Expert guidance through every step of the home buying process",
+    description:
+      "Expert guidance through every step of the home buying process",
     icon: "Home",
+  },
+  {
+    name: "3–4 Bedroom Homes",
+    slug: "3-4-bedroom-homes",
+    description:
+      "Single-family homes with the bedrooms and living space you need",
+    icon: "Home",
+  },
+  {
+    name: "Homes with Yards",
+    slug: "homes-with-yards",
+    description:
+      "Single-family lots with private outdoor space across the valley",
+    icon: "TreePine",
   },
   {
     name: "Home Selling",
     slug: "sellers",
-    description: "Maximize your home's value with professional marketing and negotiation",
+    description:
+      "Maximize your home's value with professional marketing and negotiation",
     icon: "TrendingUp",
-  },
-  {
-    name: "Luxury Homes",
-    slug: "luxury-homes",
-    description: "Specialized expertise in Las Vegas luxury real estate",
-    icon: "Star",
   },
   {
     name: "New Construction",
     slug: "new-construction",
     description: "Free buyer representation for new home purchases",
     icon: "Building",
-  },
-  {
-    name: "Investment Properties",
-    slug: "investment-properties",
-    description: "Strategic consulting for rental and investment opportunities",
-    icon: "DollarSign",
   },
   {
     name: "Relocation",
@@ -223,40 +271,39 @@ export const services = [
   },
 ];
 
-// Expert quotes from Dr. Jan Duffy
 export const expertQuotes = {
-  market: `"The Las Vegas market remains strong heading into 2026. We're seeing continued demand from California relocators and remote workers, but the days of 20 offers on every listing are behind us. Buyers finally have some negotiating power."`,
+  market: `"The valley median for a single-family home was $480,000 in August 2026, with 31 days on market and about 4 months of inventory. Buyers have room to negotiate on overpriced listings."`,
   buyers: `"My job isn't just to show you houses—it's to make sure you don't overpay, that you understand what you're buying, and that you're protected through every step of the transaction."`,
   sellers: `"Pricing your home correctly from day one is the single most important factor in getting top dollar. Overpriced homes sit, and every day on market costs you money."`,
   luxury: `"Luxury buyers expect discretion, market expertise, and flawless execution. In this price range, one wrong move can cost hundreds of thousands of dollars."`,
   investment: `"Las Vegas rental yields are among the best in the country right now. But you need to know which neighborhoods are appreciating and which have peaked."`,
-  relocation: `"Moving to a new city is stressful enough. I handle everything from neighborhood tours to school research to contractor referrals so you can focus on your new beginning."`,
+  relocation: `"Moving to a new city is stressful enough. I handle neighborhood tours, commute mapping, and contractor referrals so you can focus on the move."`,
   newConstruction: `"Builders have sales agents who work for them, not you. Having your own representation costs you nothing but can save you tens of thousands in upgrades and negotiations."`,
   valueProposition: `"When clients ask why they should choose a Berkshire Hathaway HomeServices agent, I tell them: you're not just getting me—you're getting a global network of 50,000 agents, world-class marketing, and a brand that's synonymous with trust."`,
 };
 
-// Common FAQs
 export const commonFAQs = {
   general: [
     {
-      question: "Why should I choose a Berkshire Hathaway HomeServices agent?",
+      question: "What is a Las Vegas family home on this site?",
       answer:
-        "Berkshire Hathaway HomeServices is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents. When you're making the biggest purchase of your life, that trust matters.",
+        "We focus on single-family houses with 3–5 bedrooms, private yards, and access to parks and rec centers in Summerlin, Henderson, Centennial Hills, Skye Canyon, Inspirada, and Mountain's Edge. Dr. Jan Duffy matches square footage, lot size, and commute — not marketing labels.",
     },
     {
-      question: "What areas does Berkshire Hathaway HomeServices Nevada Properties cover?",
+      question: "What is the current Las Vegas single-family median price?",
       answer:
-        "BHHS Nevada Properties serves all of Las Vegas, Henderson, North Las Vegas, and surrounding areas, with specialized expertise in Summerlin, The Ridges, Skye Canyon, Southern Highlands, Green Valley, and Henderson's master-planned communities.",
+        "Per Las Vegas REALTORS (LVR) August 2026 statistics, the valley single-family median sale price was $480,000, down about 1% year-over-year. Median days on market were 31, with 7,442 active single-family listings and 4.0 months of inventory. Neighborhood medians vary by village — call (702) 222-1964 for current comps.",
     },
     {
-      question: "How do Berkshire Hathaway HomeServices agents get paid?",
+      question: "Which neighborhoods have 3–5 bedroom homes with yards?",
       answer:
-        "Commission structures are negotiable. Dr. Jan Duffy offers transparent pricing and will walk you through all costs before you sign anything. For buyers, our services are typically free as commissions are paid by the seller.",
+        "Summerlin, Henderson (Green Valley and Inspirada), Centennial Hills, Skye Canyon, Mountain's Edge, Southern Highlands, and North Las Vegas all have large inventories of 3–5 bedroom single-family homes. Dr. Jan maps floor plans, lot size, and commute times to your list.",
     },
     {
-      question: "What is Dr. Jan Duffy's experience in Las Vegas real estate?",
+      question:
+        "Why work with Dr. Jan Duffy at Berkshire Hathaway HomeServices?",
       answer:
-        "Dr. Jan Duffy has been serving Las Vegas since 2008, with $127M+ in closed transactions and 500+ satisfied clients. Her expertise spans residential, luxury, investment, and new construction properties throughout Southern Nevada.",
+        "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc. Dr. Jan has served Las Vegas since 2008, with $127M+ in closed transactions. Call or text (702) 222-1964 — she answers her own phone.",
     },
   ],
   buying: [
@@ -285,7 +332,7 @@ export const commonFAQs = {
     {
       question: "How long will it take to sell my home?",
       answer:
-        "Currently, well-priced homes in Las Vegas are selling in an average of 28 days. Luxury homes may take longer (45+ days). Pricing strategy is crucial—overpriced homes can sit for months.",
+        "As of August 2026, the valley median days on market for residential properties was 31 days (LVR). Well-priced single-family homes still move; overpriced listings sit. Pricing strategy is the lever.",
     },
     {
       question: "What do I need to do to prepare my home for sale?",
