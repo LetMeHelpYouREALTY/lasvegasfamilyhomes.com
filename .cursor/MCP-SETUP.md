@@ -1,5 +1,82 @@
 # MCP setup for this project
 
+Copy `.cursor/mcp.json.example` to `.cursor/mcp.json` (gitignored). Restart Cursor after edits.
+
+Official Exa reference (fetched 2026-08-27): [exa.ai/docs/reference/exa-mcp](https://exa.ai/docs/reference/exa-mcp)
+
+---
+
+## Exa MCP (web search + page fetch)
+
+Exa is a **Cursor client** tool for live web search and page fetches. It does **not** replace RealScout, Follow Up Boss, or Calendly — those stay native.
+
+### Fastest path
+
+Install from the [Cursor Marketplace listing for Exa](https://cursor.com/marketplace/exa), then sign in to Exa in the browser (OAuth).
+
+### Manual config (`~/.cursor/mcp.json` or project `.cursor/mcp.json`)
+
+```json
+{
+  "mcpServers": {
+    "exa": {
+      "url": "https://mcp.exa.ai/mcp"
+    }
+  }
+}
+```
+
+Default tools (no query param needed):
+
+| Tool | Use |
+| --- | --- |
+| `web_search_exa` | Web search with clean content |
+| `web_fetch_exa` | Fetch URL(s) as markdown |
+
+Optional tools via `?tools=` on the MCP URL:
+
+| Tool | Use |
+| --- | --- |
+| `web_search_advanced_exa` | Filters, dates, domains, highlights |
+| `agent_run` | Multi-step Exa Agent (usage-based; needs OAuth or API key) |
+
+Enable defaults plus advanced + agent:
+
+```
+https://mcp.exa.ai/mcp?tools=web_search_exa,web_fetch_exa,web_search_advanced_exa,agent_run
+```
+
+### Auth (current as of 2026-08-27)
+
+- Hosted MCP works on Exa’s **free plan** for casual use — no key required.
+- **OAuth:** Cursor opens a browser to your Exa account on first connect. Manage at [dashboard.exa.ai](https://dashboard.exa.ai).
+- **API key (optional):** lifts rate limits and is the production path. Get a key at [dashboard.exa.ai/api-keys](https://dashboard.exa.ai/api-keys).
+
+```json
+{
+  "mcpServers": {
+    "exa": {
+      "url": "https://mcp.exa.ai/mcp",
+      "headers": {
+        "x-api-key": "${env:EXA_API_KEY}"
+      }
+    }
+  }
+}
+```
+
+Do not commit a real key. If `EXA_API_KEY` is unset, omit the `headers` block so free-plan OAuth still works.
+
+Fallback if the client cannot speak remote MCP: `npx -y mcp-remote https://mcp.exa.ai/mcp`, or local `npx -y exa-mcp-server` with `EXA_API_KEY`.
+
+### Troubleshooting
+
+- Tools missing: restart Cursor after saving `mcp.json`.
+- HTTP 429: add `x-api-key` from the dashboard.
+- Endpoint: `https://mcp.exa.ai/mcp` (streamable HTTP; GET/HEAD may return 405).
+
+---
+
 ## Notion MCP (configured in `.cursor/mcp.json`)
 
 The **Notion MCP server** is installed via `mcp.json`. To finish setup:
@@ -44,14 +121,7 @@ The **Notion MCP server** is installed via `mcp.json`. To finish setup:
 
 ## Adding more MCP servers
 
-Edit **`.cursor/mcp.json`** and add entries under `mcpServers`. Examples:
-
-- **GitHub:** `"github": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-github"], "env": { "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_xxx" } }`
-- **Filesystem:** `"filesystem": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "C:/path/to/allowed/folder"] }`
-
-Then restart Cursor.
-
----
+Edit **`.cursor/mcp.json`** and add entries under `mcpServers`. Then restart Cursor.
 
 ## Notion plugin vs Notion MCP
 
