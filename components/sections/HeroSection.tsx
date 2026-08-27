@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
@@ -25,6 +26,7 @@ export default function HeroSection() {
   }, [prefersReducedMotion]);
 
   return (
+    <>
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0">
@@ -100,5 +102,7 @@ export default function HeroSection() {
         </div>
       </div>
     </div>
+    <OfficeListingsUnderHero />
+    </>
   );
 }

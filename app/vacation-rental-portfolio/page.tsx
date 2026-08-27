@@ -20,6 +20,7 @@ export default function VacationRentalsPage() {
         subtitle="Seasonal stays, executive leases, and mid-term placements across the Las Vegas Valley."
         image="/images/hero/vacation.jpg"
         compact
+        showOfficeListings={false}
       />
       <section className="lp-section bg-white">
         <div className="lp-container">

@@ -18,6 +18,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 
 export const metadata: Metadata = {
   title: "Las Vegas Homes for Sale | MLS Property Search | Berkshire Hathaway HomeServices",
@@ -136,21 +137,7 @@ export default function ListingsPage() {
             </div>
           </div>
 
-          {/* RealScout Widget - Live MLS Listings */}
-          <section className="mb-16">
-            <div className="max-w-7xl mx-auto">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<realscout-office-listings 
-                    agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                    sort-order="NEWEST" 
-                    listing-status="For Sale" 
-                    property-types=",SFR,MF,TC"
-                  ></realscout-office-listings>`,
-                }}
-              />
-            </div>
-          </section>
+          <OfficeListingsUnderHero variant="legacy" />
 
           {/* Popular Searches Section */}
           <section className="mb-16 max-w-6xl mx-auto">

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 
 export const metadata: Metadata = {
   title: "Property Details | Las Vegas & Henderson Real Estate",
@@ -82,6 +83,8 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
               priority
             />
           </div>
+
+          <OfficeListingsUnderHero variant="legacy" />
 
           {/* Property Details Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">

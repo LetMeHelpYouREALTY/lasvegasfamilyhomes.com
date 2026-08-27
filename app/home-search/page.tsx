@@ -13,6 +13,7 @@ import {
   getZipLocations,
 } from "@/lib/home-search";
 import { agentInfo, officeInfo, siteConfig } from "@/lib/site-config";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 
 export const metadata: Metadata = {
   title: "Las Vegas Home Search | City, ZIP & Property Type Pages",
@@ -50,6 +51,8 @@ export default function HomeSearchHubPage() {
               __html: `<realscout-simple-search agent-encoded-id="${REALSCOUT_AGENT_ID}"></realscout-simple-search>`,
             }}
           />
+
+          <OfficeListingsUnderHero variant="legacy" />
 
           <p className="mb-12">
             <Link

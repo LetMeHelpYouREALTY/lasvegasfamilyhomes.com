@@ -42,7 +42,6 @@ export type FamilyHomePageContent = {
 };
 
 const listingsSearch = `<realscout-simple-search agent-encoded-id="${REALSCOUT_AGENT_ID}"></realscout-simple-search>`;
-const sfrListings = `<realscout-office-listings agent-encoded-id="${REALSCOUT_AGENT_ID}" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR"></realscout-office-listings>`;
 
 const phone = agentInfo.phone;
 const nap = `${officeInfo.address.street}, ${officeInfo.address.city}, ${officeInfo.address.state} ${officeInfo.address.zip}`;
@@ -113,7 +112,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
       { href: "/home-search/listings", label: "Search Yards" },
       { href: "/pool-homes", label: "Pool Homes" },
     ],
-    searchHtml: sfrListings,
+    searchHtml: listingsSearch,
     sections: [
       {
         kicker: "Outdoor Living",
@@ -160,7 +159,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
       { href: "/home-search/listings", label: "Filter Bedrooms" },
       { href: "/single-story-homes", label: "Single-Story" },
     ],
-    searchHtml: sfrListings,
+    searchHtml: listingsSearch,
     sections: [
       {
         kicker: "Floor Plans",
@@ -203,7 +202,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
     subtitle:
       "Ranch floor plans without stairs — one-level living in Henderson and Summerlin.",
     heroImage: "/images/hero/single-story.jpg",
-    searchHtml: sfrListings,
+    searchHtml: listingsSearch,
     sections: [
       {
         kicker: "One Level",
@@ -242,7 +241,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
     subtitle:
       "Private pools and covered patios — filter MLS listings for pool and spa.",
     heroImage: "/images/hero/pool.jpg",
-    searchHtml: sfrListings,
+    searchHtml: listingsSearch,
     sections: [
       {
         kicker: "Private Water",
@@ -324,7 +323,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
       { href: "/contact", label: "Request This Weekend’s List" },
       { href: "/home-search/listings", label: "See Active Listings" },
     ],
-    searchHtml: sfrListings,
+    searchHtml: listingsSearch,
     sections: [
       {
         kicker: "This Weekend",

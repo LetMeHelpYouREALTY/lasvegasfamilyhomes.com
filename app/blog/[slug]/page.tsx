@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import LuxuryShell from "@/components/luxury/LuxuryShell";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 import { blogPosts } from "@/lib/luxury";
 import { agentInfo, officeInfo } from "@/lib/site-config";
 
@@ -84,6 +85,7 @@ export default function BlogPostPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+        <OfficeListingsUnderHero />
         <div className="lp-section bg-white">
           <div className="lp-container max-w-2xl space-y-5 text-sm leading-7 text-luxury-muted">
             {paragraphs.map((p) => (

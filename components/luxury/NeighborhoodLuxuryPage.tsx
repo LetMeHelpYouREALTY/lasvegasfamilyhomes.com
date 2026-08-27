@@ -272,11 +272,11 @@ export default function NeighborhoodLuxuryPage({
       </section>
       <section className="lp-section bg-luxury-charcoal text-white">
         <div className="lp-container">
-          <h2 className="text-center text-white">Live MLS in {n.name}</h2>
+          <h2 className="text-center text-white">Search Live MLS in {n.name}</h2>
           <div
-            className="mt-10"
+            className="realscout-wrapper mt-10"
             dangerouslySetInnerHTML={{
-              __html: `<realscout-office-listings agent-encoded-id="${REALSCOUT_AGENT_ID}" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR"></realscout-office-listings>`,
+              __html: `<realscout-simple-search agent-encoded-id="${REALSCOUT_AGENT_ID}"></realscout-simple-search>`,
             }}
           />
           <MlsDisclaimer className="mt-10 text-white/45" />

@@ -4,8 +4,9 @@ import Link from "next/link";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import ConnectForm from "@/components/luxury/ConnectForm";
-import NapBlock, { MlsDisclaimer } from "@/components/luxury/NapBlock";
+import NapBlock from "@/components/luxury/NapBlock";
 import { WorkWithUs } from "@/components/luxury/PageHero";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 import FAQSection from "@/components/sections/FAQSection";
 import {
   aboutCopy,
@@ -118,6 +119,8 @@ export default function Home() {
           </div>
         </section>
 
+        <OfficeListingsUnderHero heading="Homes for Sale in Las Vegas" />
+
         <section className="lp-section bg-white">
           <div className="lp-container grid items-center gap-10 md:grid-cols-2 md:gap-16">
             <div className="relative aspect-[4/3] overflow-hidden">
@@ -191,19 +194,14 @@ export default function Home() {
         </section>
 
         <section className="lp-section bg-luxury-charcoal text-white">
-          <div className="lp-container">
-            <h2 className="text-center text-white">Collection of Fine Homes</h2>
-            <p className="mt-3 text-center font-sans text-[11px] uppercase tracking-luxury text-white/60">
+          <div className="lp-container text-center">
+            <h2 className="text-white">Collection of Fine Homes</h2>
+            <p className="mt-3 font-sans text-[11px] uppercase tracking-luxury text-white/60">
               Search Summerlin, Henderson, and Master-Planned Streets
             </p>
-            <div className="mt-12">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<realscout-office-listings agent-encoded-id="${REALSCOUT_AGENT_ID}" sort-order="NEWEST" listing-status="For Sale" property-types=",SFR,MF,TC" price-min="500000"></realscout-office-listings>`,
-                }}
-              />
-            </div>
-            <MlsDisclaimer className="mt-10 text-white/45" />
+            <Link href="/home-search/listings" className="lp-btn lp-btn-light mt-10">
+              Search Live MLS
+            </Link>
           </div>
         </section>
 

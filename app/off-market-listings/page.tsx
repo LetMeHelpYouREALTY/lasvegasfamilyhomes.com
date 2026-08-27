@@ -21,6 +21,7 @@ export default function OffMarketPage() {
         subtitle="On-market MLS inventory plus privately shopped homes that never hit the portal first."
         image="/images/hero/off-market.jpg"
         compact
+        showOfficeListings={false}
       />
       <section className="lp-section bg-white">
         <div className="lp-container">

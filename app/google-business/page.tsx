@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 import {
   Phone,
   Mail,
@@ -17,7 +19,6 @@ import {
   Building,
   Heart,
 } from "lucide-react";
-import type { Metadata } from "next";
 import {
   businessInfo,
   gbpDescription,
@@ -123,6 +124,8 @@ export default function GoogleBusinessPage() {
               </div>
             </div>
           </section>
+
+          <OfficeListingsUnderHero variant="legacy" />
 
           {/* Business Hours */}
           <section className="max-w-5xl mx-auto mb-16">

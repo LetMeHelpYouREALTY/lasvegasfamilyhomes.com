@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderHero";
 
 export const metadata: Metadata = {
   title: "Security Policy",
@@ -17,6 +18,8 @@ export default function SecurityPolicyPage() {
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
           Security Policy
         </h1>
+
+        <OfficeListingsUnderHero variant="legacy" />
 
         <div className="prose prose-lg max-w-none">
           {/* Overview */}
