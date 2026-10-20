@@ -6,7 +6,7 @@ import { BotIdClient } from "botid/client";
 import { getDomainConfig } from "@/lib/domain-config";
 import { BOTID_PROTECTED_ROUTES } from "@/lib/botid-protect";
 import { buildMetadata } from "@/lib/seo";
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 
 export const viewport: Viewport = {
