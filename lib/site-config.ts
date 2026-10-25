@@ -106,7 +106,7 @@ export const valuePropositions = {
   trust:
     "Berkshire Hathaway HomeServices is the only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, ethical standards, and a global referral network of 50,000+ agents.",
   expertise:
-    "Serving Las Vegas since 2008 with $127M+ in closed transactions, Dr. Jan Duffy matches buyers with 3–5 bedroom homes, yards, and master-planned amenities across the valley.",
+    "Serving Las Vegas since 2008 with $127M+ in Dr. Duffy Group career sales, Dr. Jan Duffy matches buyers with 3–5 bedroom homes, yards, and master-planned amenities across the valley.",
 };
 
 export const neighborhoods = [
@@ -303,7 +303,7 @@ export const commonFAQs = {
       question:
         "Why work with Dr. Jan Duffy at Berkshire Hathaway HomeServices?",
       answer:
-        "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc. Dr. Jan has served Las Vegas since 2008, with $127M+ in closed transactions. Call or text (702) 222-1964 — she answers her own phone.",
+        "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc. Dr. Jan has served Las Vegas since 2008, with $127M+ in Dr. Duffy Group career sales. Call or text (702) 222-1964 — she answers her own phone.",
     },
   ],
   buying: [
