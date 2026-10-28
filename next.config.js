@@ -18,7 +18,6 @@ const nextConfig = {
   compress: true,
 
   // Performance optimizations
-  swcMinify: true,
 
   // Host canonicalization (www vs apex) belongs in Vercel Domains only.
   // A Next.js www→apex rule here fought Vercel’s apex→www redirect and
