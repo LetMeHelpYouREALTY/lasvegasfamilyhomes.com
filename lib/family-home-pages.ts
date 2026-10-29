@@ -55,7 +55,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
     },
     h1: "Las Vegas Family Homes for Sale",
     subtitle:
-      "Square footage, yards, and floor plans that fit — Summerlin, Henderson, and the valley. Call (702) 222-1964.",
+      "Square footage, yards, and floor plans that fit — Summerlin, Henderson, and the valley. Call (702) 500-1955.",
     heroImage: "/images/hero/family-homes.jpg",
     heroCtas: [
       { href: "/home-search/listings", label: "Search Listings" },
@@ -329,7 +329,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
         kicker: "This Weekend",
         heading: "Walk Through Homes This Weekend",
         headingLevel: 2,
-        body: "Open houses are useful for a first pass. Offers still need a private showing, a seller disclosure read, and a number that matches the last three closings. Text (702) 222-1964 with zip, bedrooms, and Saturday or Sunday — we send a short list, not a flyer dump.",
+        body: "Open houses are useful for a first pass. Offers still need a private showing, a seller disclosure read, and a number that matches the last three closings. Text (702) 500-1955 with zip, bedrooms, and Saturday or Sunday — we send a short list, not a flyer dump.",
         image: "/images/hero/open-houses.jpg",
         alt: "Open house sign on a Las Vegas suburban lawn",
         cta: { href: "/contact", label: "Get Open House Times" },
@@ -479,7 +479,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
     faqs: [
       {
         q: "Where should I leave a review?",
-        a: "Google Business Profile is the primary public review surface. It should match this site’s name, address, and (702) 222-1964.",
+        a: "Google Business Profile is the primary public review surface. It should match this site’s name, address, and (702) 500-1955.",
       },
     ],
   },

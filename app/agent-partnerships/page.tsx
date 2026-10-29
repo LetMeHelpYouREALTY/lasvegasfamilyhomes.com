@@ -7,7 +7,7 @@ import ImageSplit from "@/components/luxury/ImageSplit";
 export const metadata: Metadata = {
   title: "Agent Partnerships | Dr. Jan Duffy",
   description:
-    "Cooperating-broker and referral partnerships with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
+    "Cooperating-broker and referral partnerships with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 500-1955.",
 };
 
 export default function AgentPartnershipsPage() {

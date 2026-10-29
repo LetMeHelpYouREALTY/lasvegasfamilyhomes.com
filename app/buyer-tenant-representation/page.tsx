@@ -8,7 +8,7 @@ import { agentInfo } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Buyer & Tenant Representation | Dr. Jan Duffy",
   description:
-    "Buyer and tenant representation in Las Vegas, Henderson, and Summerlin. Criteria, curated lists, paperwork, and escrow support. Call (702) 222-1964.",
+    "Buyer and tenant representation in Las Vegas, Henderson, and Summerlin. Criteria, curated lists, paperwork, and escrow support. Call (702) 500-1955.",
 };
 
 const steps = [

@@ -41,7 +41,7 @@ describe("home-search SEO catalog", () => {
       expect(config).not.toBeNull();
       const metadata = buildHomeSearchMetadata(config!);
       expect(String(metadata.title)).toContain("Summerlin, NV");
-      expect(String(metadata.description)).toContain("(702) 222-1964");
+      expect(String(metadata.description)).toContain("(702) 500-1955");
       titles.add(String(metadata.title));
     }
     expect(titles.size).toBe(HOME_SEARCH_PROPERTY_TYPE_ORDER.length);
