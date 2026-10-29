@@ -29,7 +29,7 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const domain = headers().get("x-domain") || "";
+  const domain = (await headers()).get("x-domain") || "";
   const config = getDomainConfig(domain);
   return buildMetadata(config, { path: "/" });
 }
@@ -40,10 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${tenorSans.variable} ${montserrat.variable}`}
-    >
+    <html lang="en" className={`${tenorSans.variable} ${montserrat.variable}`}>
       <head>
         <BotIdClient protect={BOTID_PROTECTED_ROUTES} />
         <Script

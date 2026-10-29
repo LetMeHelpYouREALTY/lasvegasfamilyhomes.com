@@ -24,13 +24,14 @@ const bodies: Record<string, string[]> = {
   ],
 };
 
-type PageProps = { params: { slug: string } };
+type PageProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
   const post = blogPosts.find((p) => p.slug === params.slug);
   if (!post) return { title: "Article" };
   return {
@@ -39,7 +40,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function BlogPostPage({ params }: PageProps) {
+export default async function BlogPostPage(props: PageProps) {
+  const params = await props.params;
   const post = blogPosts.find((p) => p.slug === params.slug);
   if (!post) notFound();
   const paragraphs = bodies[post.slug] ?? [post.excerpt];

@@ -8,7 +8,7 @@ import {
 } from "@/lib/home-search";
 
 type PageProps = {
-  params: { seoPath: string[] };
+  params: Promise<{ seoPath: string[] }>;
 };
 
 export const dynamicParams = false;
@@ -17,7 +17,8 @@ export function generateStaticParams() {
   return generateAllSeoPaths().map((seoPath) => ({ seoPath }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const params = await props.params;
   const config = parseSeoPath(params.seoPath);
   if (!config) {
     return { title: "Home search not found" };
@@ -25,7 +26,8 @@ export function generateMetadata({ params }: PageProps): Metadata {
   return buildHomeSearchMetadata(config);
 }
 
-export default function HomeSearchSeoPage({ params }: PageProps) {
+export default async function HomeSearchSeoPage(props: PageProps) {
+  const params = await props.params;
   const config = parseSeoPath(params.seoPath);
   if (!config) {
     notFound();
