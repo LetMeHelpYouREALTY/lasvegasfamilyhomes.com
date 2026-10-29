@@ -329,7 +329,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
         kicker: "This Weekend",
         heading: "Walk Through Homes This Weekend",
         headingLevel: 2,
-        body: "Open houses are useful for a first pass. Offers still need a private showing, a seller disclosure read, and a number that matches the last three closings. Text (702) 500-1955 with zip, bedrooms, and Saturday or Sunday — we send a short list, not a flyer dump.",
+        body: "Open houses are useful for a first pass. Offers still need a private showing, a seller disclosure read, and a number that matches the last three closings. Text (702) 222-1964 with zip, bedrooms, and Saturday or Sunday — we send a short list, not a flyer dump.",
         image: "/images/hero/open-houses.jpg",
         alt: "Open house sign on a Las Vegas suburban lawn",
         cta: { href: "/contact", label: "Get Open House Times" },
