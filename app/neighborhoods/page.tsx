@@ -9,7 +9,7 @@ import { neighborhoods as neighborhoodStats } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Las Vegas Neighborhoods | Areas of Expertise | Dr. Jan Duffy",
   description:
-    "Summerlin, Henderson, The Ridges, Skye Canyon, Centennial Hills, Inspirada, Green Valley, Southern Highlands, Mountain's Edge, and North Las Vegas. Dr. Jan Duffy, (702) 222-1964.",
+    "Summerlin, Henderson, The Ridges, Skye Canyon, Centennial Hills, Inspirada, Green Valley, Southern Highlands, Mountain's Edge, and North Las Vegas. Dr. Jan Duffy, (702) 500-1942.",
 };
 
 export default function NeighborhoodsPage() {

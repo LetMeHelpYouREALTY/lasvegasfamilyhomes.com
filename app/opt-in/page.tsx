@@ -7,7 +7,7 @@ import { smsConsentCopy } from "@/lib/luxury";
 export const metadata: Metadata = {
   title: "Register for Deals | Opt In | Dr. Jan Duffy",
   description:
-    "Opt in for new Las Vegas listings, off-market homes, and rental alerts from Dr. Jan Duffy. Call (702) 222-1964.",
+    "Opt in for new Las Vegas listings, off-market homes, and rental alerts from Dr. Jan Duffy. Call (702) 500-1942.",
 };
 
 export default function OptInPage() {

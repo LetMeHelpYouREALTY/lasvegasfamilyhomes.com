@@ -9,7 +9,7 @@ import CalendlyWidget from "@/components/calendly/CalendlyWidget";
 export const metadata: Metadata = {
   title: "Contact Us | Dr. Jan Duffy | Las Vegas Family Homes",
   description:
-    "Contact Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Call (702) 222-1964.",
+    "Contact Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Call (702) 500-1942.",
 };
 
 export default function ContactPage() {
