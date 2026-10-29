@@ -12,17 +12,17 @@ export const siteConfig = {
   shortName: "LV Family Homes",
   url: "https://lasvegasfamilyhomes.com",
   description:
-    "Search Las Vegas family homes for sale — 3–5 bedroom houses with yards in Summerlin, Henderson, Centennial Hills, Skye Canyon, Inspirada, and Mountain's Edge. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
+    "Search Las Vegas family homes for sale — 3–5 bedroom houses with yards in Summerlin, Henderson, Centennial Hills, Skye Canyon, Inspirada, and Mountain's Edge. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 500-1955.",
 };
 
 export const agentInfo = {
   name: "Dr. Jan Duffy",
   title: "REALTOR®",
   license: "S.0197614.LLC",
-  phone: "(702) 222-1964",
-  phoneFormatted: "(702) 222-1964",
-  phoneTel: "tel:+17022221964",
-  phoneE164: "+17022221964",
+  phone: "(702) 500-1955",
+  phoneFormatted: "(702) 500-1955",
+  phoneTel: "tel:+17025001955",
+  phoneE164: "+17025001955",
   email: "DrDuffy@bhhsnv.com",
   brokerage: "Berkshire Hathaway HomeServices Nevada Properties",
 };
@@ -40,8 +40,8 @@ export const officeInfo = {
     lat: 36.1893,
     lng: -115.2821,
   },
-  phone: "(702) 222-1964",
-  phoneTel: "tel:+17022221964",
+  phone: "(702) 500-1955",
+  phoneTel: "tel:+17025001955",
   hours: {
     weekday: "Monday–Friday 9am–6pm",
     weekend: "Saturday 10am–4pm",
@@ -292,7 +292,7 @@ export const commonFAQs = {
     {
       question: "What is the current Las Vegas single-family median price?",
       answer:
-        "Per Las Vegas REALTORS (LVR) August 2026 statistics, the valley single-family median sale price was $480,000, down about 1% year-over-year. Median days on market were 31, with 7,442 active single-family listings and 4.0 months of inventory. Neighborhood medians vary by village — call (702) 222-1964 for current comps.",
+        "Per Las Vegas REALTORS (LVR) August 2026 statistics, the valley single-family median sale price was $480,000, down about 1% year-over-year. Median days on market were 31, with 7,442 active single-family listings and 4.0 months of inventory. Neighborhood medians vary by village — call (702) 500-1955 for current comps.",
     },
     {
       question: "Which neighborhoods have 3–5 bedroom homes with yards?",
@@ -303,7 +303,7 @@ export const commonFAQs = {
       question:
         "Why work with Dr. Jan Duffy at Berkshire Hathaway HomeServices?",
       answer:
-        "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc. Dr. Jan has served Las Vegas since 2008, with $127M+ in closed transactions. Call or text (702) 222-1964 — she answers her own phone.",
+        "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc. Dr. Jan has served Las Vegas since 2008, with $127M+ in closed transactions. Call or text (702) 500-1955 — she answers her own phone.",
     },
   ],
   buying: [

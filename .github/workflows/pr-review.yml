@@ -334,8 +334,8 @@ jobs:
                 }
                 
                 // Check for retired tracking numbers (702-222-1964 is the current client CTA)
-                if (content.includes('702-500-1955') || content.includes('7025001955')) {
-                  issues.push(`❌ **${file.filename}**: Contains old phone number (should be (702) 222-1964)`);
+                if (content.includes('702-222-1964') || content.includes('7022221964')) {
+                  issues.push(`❌ **${file.filename}**: Contains old phone number (should be (702) 500-1955)`);
                 }
                 
                 // Check for JSON-LD schema

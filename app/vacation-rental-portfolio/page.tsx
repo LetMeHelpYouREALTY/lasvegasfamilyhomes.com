@@ -9,7 +9,7 @@ import { REALSCOUT_AGENT_ID } from "@/lib/home-search";
 export const metadata: Metadata = {
   title: "Vacation Homes & Estate Rentals | Dr. Jan Duffy",
   description:
-    "Las Vegas estate rentals and vacation homes — Summerlin, Henderson, and the valley. Search leases with Dr. Jan Duffy. Call (702) 222-1964.",
+    "Las Vegas estate rentals and vacation homes — Summerlin, Henderson, and the valley. Search leases with Dr. Jan Duffy. Call (702) 500-1955.",
 };
 
 export default function VacationRentalsPage() {

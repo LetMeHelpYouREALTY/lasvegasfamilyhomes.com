@@ -18,7 +18,7 @@ import OfficeListingsUnderHero from "@/components/realscout/OfficeListingsUnderH
 export const metadata: Metadata = {
   title: "Las Vegas Home Search | City, ZIP & Property Type Pages",
   description:
-    "Browse every Las Vegas Valley home-search page — cities, communities, ZIPs, and nine property types — with live RealScout MLS listings. Dr. Jan Duffy, BHHS Nevada Properties. Call (702) 222-1964.",
+    "Browse every Las Vegas Valley home-search page — cities, communities, ZIPs, and nine property types — with live RealScout MLS listings. Dr. Jan Duffy, BHHS Nevada Properties. Call (702) 500-1955.",
   alternates: {
     canonical: `${siteConfig.url}/home-search`,
   },

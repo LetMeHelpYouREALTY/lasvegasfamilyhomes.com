@@ -10,7 +10,7 @@ import { REALSCOUT_AGENT_ID } from "@/lib/home-search";
 export const metadata: Metadata = {
   title: "Off-Market Listings & Sales Portfolio | Dr. Jan Duffy",
   description:
-    "Off-market and on-market Las Vegas listings with Dr. Jan Duffy. Summerlin, Henderson, The Ridges, and valley-wide. Call (702) 222-1964.",
+    "Off-market and on-market Las Vegas listings with Dr. Jan Duffy. Summerlin, Henderson, The Ridges, and valley-wide. Call (702) 500-1955.",
 };
 
 export default function OffMarketPage() {

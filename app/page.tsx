@@ -24,7 +24,7 @@ export const metadata: Metadata = buildMetadata(
     ...DEFAULT_CONFIG,
     heroHeadline: "Las Vegas Family Homes",
     description:
-      "Search 3–5 bedroom Las Vegas family homes with yards in Summerlin, Henderson, and Clark County. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 222-1964.",
+      "Search 3–5 bedroom Las Vegas family homes with yards in Summerlin, Henderson, and Clark County. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 500-1955.",
   },
   { path: "/" },
 );
