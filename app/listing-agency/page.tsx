@@ -8,7 +8,7 @@ import { agentInfo } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Listing Agency | Luxury Listing Process | Dr. Jan Duffy",
   description:
-    "How Dr. Jan Duffy lists Las Vegas homes: custom property sites, targeted campaigns, photography, and escrow representation. License S.0197614.LLC. Call (702) 222-1964.",
+    "How Dr. Jan Duffy lists Las Vegas homes: custom property sites, targeted campaigns, photography, and escrow representation. License S.0197614.LLC. Call (702) 500-1942.",
 };
 
 const local = [

@@ -12,8 +12,8 @@ export const businessInfo = {
     addressCountry: "US",
   },
   phone: {
-    display: "(702) 222-1964",
-    tel: "+17022221964",
+    display: "(702) 500-1942",
+    tel: "+17025001942",
   },
   email: "DrDuffy@bhhsnv.com",
   url: "https://lasvegasfamilyhomes.com",
@@ -200,7 +200,7 @@ export const gbpFAQs = [
   },
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
-    answer: "Call or text (702) 222-1964 for immediate assistance, or email DrDuffy@bhhsnv.com. Office visits available at 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday by appointment.",
+    answer: "Call or text (702) 500-1942 for immediate assistance, or email DrDuffy@bhhsnv.com. Office visits available at 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday by appointment.",
   },
   {
     question: "Does Dr. Jan help with investment properties in Las Vegas?",

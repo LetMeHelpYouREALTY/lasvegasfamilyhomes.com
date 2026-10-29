@@ -6,7 +6,7 @@ import PageHero from "@/components/luxury/PageHero";
 export const metadata: Metadata = {
   title: "September 2026 Coming Soon | Las Vegas Family Homes",
   description:
-    "A new listing and sales showcase arrives September 2026. Register to be notified. Dr. Jan Duffy, (702) 222-1964.",
+    "A new listing and sales showcase arrives September 2026. Register to be notified. Dr. Jan Duffy, (702) 500-1942.",
 };
 
 export default function ComingSoonPage() {

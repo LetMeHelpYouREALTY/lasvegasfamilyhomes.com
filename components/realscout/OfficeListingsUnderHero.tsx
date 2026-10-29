@@ -44,7 +44,7 @@ export default function OfficeListingsUnderHero({
         </h2>
         <p className="mb-8 text-center text-slate-600">
           Newest listings through RealScout and the Greater Las Vegas
-          Association of REALTORS® MLS. Call (702) 222-1964 to tour.
+          Association of REALTORS® MLS. Call (702) 500-1942 to tour.
         </p>
         <div dangerouslySetInnerHTML={{ __html: widget }} />
         <MlsDisclaimer className="mt-8" />
