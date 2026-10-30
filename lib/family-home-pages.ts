@@ -448,7 +448,7 @@ export const familyHomePages: Record<string, FamilyHomePageContent> = {
     },
     h1: "Client Reviews for Dr. Jan Duffy",
     subtitle:
-      "4.9 stars from buyers and sellers — read Google reviews and share yours.",
+      "5.0★ from 50 Realtor.com reviews — read our Google reviews and share yours.",
     heroImage: "/images/hero/reviews.jpg",
     compact: true,
     heroCtas: [

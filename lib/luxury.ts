@@ -331,9 +331,4 @@ export const localBusinessJsonLd = {
     "Summerlin, NV",
     "North Las Vegas, NV",
   ],
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    reviewCount: "200",
-  },
 };

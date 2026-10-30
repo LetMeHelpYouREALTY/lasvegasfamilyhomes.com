@@ -97,8 +97,8 @@ export const agentStats = {
   servingSince: 2008,
   transactionsClosed: 500,
   volumeClosed: "$127M+",
-  averageRating: 4.9,
-  reviewCount: 200,
+  averageRating: 5.0,
+  reviewCount: 50,
 };
 
 export const valuePropositions = {

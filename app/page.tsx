@@ -241,7 +241,7 @@ export default function Home() {
             <h2>Our Clients</h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm text-luxury-muted">
               Families, executives, and investors who chose Dr. Jan Duffy for
-              Las Vegas, Henderson, and Summerlin — 4.9★ from 200+ reviews.
+              Las Vegas, Henderson, and Summerlin — 5.0★ from 50 Realtor.com reviews.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-8 text-[11px] uppercase tracking-luxury text-luxury-muted">
               <span>Berkshire Hathaway HomeServices</span>
