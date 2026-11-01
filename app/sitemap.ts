@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { generateAllHomeSearchUrls } from "@/lib/home-search";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://lasvegasfamilyhomes.com";
+  const baseUrl = "https://www.lasvegasfamilyhomes.com";
   const lastModified = new Date();
 
   // Core pages

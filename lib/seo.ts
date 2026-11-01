@@ -11,7 +11,8 @@ export function getCanonicalUrl(hostname?: string): string {
     config.domain && config.domain !== "default"
       ? config.domain
       : "lasvegasfamilyhomes.com";
-  return `https://${host.replace(/^www\./, "")}`;
+  // Vercel serves www and 308s the apex to it, so canonicals use www.
+  return `https://www.${host.replace(/^www\./, "")}`;
 }
 
 export function getOgImage(canonicalUrl: string) {

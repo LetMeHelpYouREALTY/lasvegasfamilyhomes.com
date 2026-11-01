@@ -16,7 +16,7 @@ export const businessInfo = {
     tel: "+17025001955",
   },
   email: "DrDuffy@bhhsnv.com",
-  url: "https://lasvegasfamilyhomes.com",
+  url: "https://www.lasvegasfamilyhomes.com",
 
   // Business Details
   license: "S.0197614.LLC",

@@ -10,7 +10,7 @@ export const siteConfig = {
     "Las Vegas Family Homes | Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties",
   brandName: "Las Vegas Family Homes",
   shortName: "LV Family Homes",
-  url: "https://lasvegasfamilyhomes.com",
+  url: "https://www.lasvegasfamilyhomes.com",
   description:
     "Search Las Vegas family homes for sale — 3–5 bedroom houses with yards in Summerlin, Henderson, Centennial Hills, Skye Canyon, Inspirada, and Mountain's Edge. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties. Call (702) 500-1955.",
 };
