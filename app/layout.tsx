@@ -29,9 +29,13 @@ export const viewport: Viewport = {
 };
 
 export async function generateMetadata(): Promise<Metadata> {
-  const domain = (await headers()).get("x-domain") || "";
+  const requestHeaders = await headers();
+  const domain = requestHeaders.get("x-domain") || "";
   const config = getDomainConfig(domain);
-  return buildMetadata(config, { path: "/" });
+  // Self-referencing canonical: each page's own path, not the homepage.
+  const pathname = requestHeaders.get("x-pathname") || "/";
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : "/";
+  return buildMetadata(config, { path });
 }
 
 export default function RootLayout({
