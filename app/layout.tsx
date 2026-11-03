@@ -8,6 +8,7 @@ import { BOTID_PROTECTED_ROUTES } from "@/lib/botid-protect";
 import { buildMetadata } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import RealtorAnalytics from "../components/analytics/RealtorAnalytics";
 
 const tenorSans = Tenor_Sans({
   subsets: ["latin"],
@@ -68,6 +69,7 @@ export default function RootLayout({
       <body className="font-sans">
         {children}
         <Analytics />
+        <RealtorAnalytics siteName="lasvegasfamilyhomes.com" />
       </body>
     </html>
   );
